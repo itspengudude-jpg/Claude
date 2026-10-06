@@ -24,6 +24,14 @@ Melty findings (game_info kenshi, search_mashups):
   launch `game`. **one_click_check = yes.** Finding: "unverified-game-integration", meaning play it once through Melty.
 - KenshiLib is GPLv3, so the plugin is released GPLv3 and credits BFrizzleFoShizzle / KenshiReclaimer.
 
+Plugin groundwork (done in the cloud session):
+- Current KenshiLib is github.com/BFrizzleFoShizzle/KenshiLib (KenshiReclaimer/KenshiLib has moved).
+- KenshiLib_Examples (GPLv3) already shows each piece we need: main-loop hook (CharacterHighlight),
+  custom FCS dialogue conditions and actions (Dialogue, Dialogue_FCS), and saving/loading plugin state
+  (WorldStates). Start the plugin from those.
+- There is no death event: lords killed or captured are found by polling `isDead` / `isChainedMode` from the tick.
+- The examples' install steps say "enable the mod via Kenshi's Mods tab", so open question 2 below is real.
+
 Open questions to settle on a real install:
 1. The shipped `Plugins_x64.cfg` must be the player's vanilla file plus RE_Kenshi's line. Diff it against
    this PC's copy, and check Steam vs GOG versions.
@@ -34,8 +42,8 @@ Open questions to settle on a real install:
 
 Next steps:
 1. Find Kenshi's install folder (Steam library or GOG). Read `gamedata.base` with OpenConstructionSet (or FCS)
-   and fill the 54 `vanilla-ref` stringIds in `design/hooks.json`. Confirm the 6 `kenshilib` functions in
-   KenshiLib's headers. Run `python tools/preflight.py` until it is clean (currently 60 open).
+   and fill the 54 `vanilla-ref` stringIds in `design/hooks.json`. Run `python tools/preflight.py` until it
+   is clean (currently 54 open). The 6 `kenshilib` functions are already confirmed (Sept 2026 KenshiLib).
 2. Generate `KenshiRealms.mod` from the sheets (OpenConstructionSet), and write the plugin from `design/systems.json`
    (VS2010 x64 toolset, Boost 1.60, KenshiLib_Examples_deps). Never commit Kenshi's own files.
 3. Test in game: each start, the ladder, recruiting, a vote, fief income. Capture a real screenshot.

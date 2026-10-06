@@ -1,5 +1,5 @@
 {
- "_about": "Every place the mod touches Kenshi. vanilla-ref rows need their stringId read from gamedata.base (FCS or OpenConstructionSet); kenshilib rows need the KenshiLib function confirmed. 'verified' must be true before build.",
+ "_about": "Every place the mod touches Kenshi. vanilla-ref rows need their stringId read from gamedata.base (FCS or OpenConstructionSet); kenshilib rows need the KenshiLib function confirmed. 'verified' must be true before build. kenshilib stringId = the KenshiLib symbols used (checked against BFrizzleFoShizzle/KenshiLib, Sept 2026).",
  "columns": [
   "id",
   "kind",
@@ -501,54 +501,54 @@
    "kind": "kenshilib",
    "target": "FUNCTION",
    "name": "GameWorld update / in-game day change",
-   "stringId": "",
-   "purpose": "Run politics once per in-game day (influence decay, votes, fief income)",
-   "verified": false
+   "stringId": "GameWorld::_NV_mainLoop_GPUSensitiveStuff + GameWorld::getTimeStamp_inGameHours",
+   "purpose": "Run politics once per in-game day: hook the main loop (as KenshiLib_Examples/CharacterHighlight does) and act when the in-game day changes",
+   "verified": true
   },
   {
    "id": "kl_faction_relations",
    "kind": "kenshilib",
    "target": "FUNCTION",
    "name": "Faction relation get/set",
-   "stringId": "",
+   "stringId": "FactionRelations::getFactionRelation / setRelation / declareWar",
    "purpose": "Read standing for the ladder; apply war/peace votes",
-   "verified": false
+   "verified": true
   },
   {
    "id": "kl_player_money",
    "kind": "kenshilib",
    "target": "FUNCTION",
    "name": "Player faction money",
-   "stringId": "",
-   "purpose": "Pay fief income and wages",
-   "verified": false
+   "stringId": "Platoon::getMoney / addMoney / takeMoney",
+   "purpose": "Pay fief income and wages into the player's money (confirm in game it lands in the shared pool)",
+   "verified": true
   },
   {
    "id": "kl_character_death",
    "kind": "kenshilib",
    "target": "FUNCTION",
    "name": "Character death/KO/imprison event",
-   "stringId": "",
-   "purpose": "Lord captured/killed: renown, influence, defection checks",
-   "verified": false
+   "stringId": "Character::isDead / Character::isChainedMode (polled from the daily tick)",
+   "purpose": "No death event in KenshiLib: poll each lord's state from the tick to catch lords killed or captured",
+   "verified": true
   },
   {
    "id": "kl_dialog_flag",
    "kind": "kenshilib",
    "target": "FUNCTION",
    "name": "Dialogue condition / event bridge",
-   "stringId": "",
-   "purpose": "Let FCS dialogue ask the plugin (renown, vote outcome) and fire plugin events",
-   "verified": false
+   "stringId": "DialogLineData::checkTags + Dialogue::_doActions (custom FCS conditions/actions)",
+   "purpose": "Let FCS dialogue ask the plugin (rank, renown, vote outcome) and fire plugin events, as KenshiLib_Examples/WorldStates + WorldStates_FCS do",
+   "verified": true
   },
   {
    "id": "kl_savegame",
    "kind": "kenshilib",
    "target": "FUNCTION",
    "name": "Save/load hook",
-   "stringId": "",
-   "purpose": "Persist renown, influence and fief holders in the save",
-   "verified": false
+   "stringId": "Faction::saveGameState (save) + GameWorld::loadAllPlatoons (load)",
+   "purpose": "Persist renown, influence, contracts and fief holders in the save, as KenshiLib_Examples/WorldStates does",
+   "verified": true
   },
   {
    "id": "site_holy_nation_fief_1",
