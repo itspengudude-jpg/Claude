@@ -19,4 +19,4 @@
 ## Next
 1. Get the game files (the .pck, or the exe if the pck is embedded), then identify the Godot version and whether scripts are encrypted.
 2. Recover the project outside the repo; fill hooks.json / baseClass / mechanic / art baseSprite cells.
-3. Ask Melty early (one_click_check) whether an uncatalogued game can be installed in one click.
+3. BLOCKER (2026-10-06): one_click_check with primary game `custom-eslabong` answers "Choose an existing host game from search_games as primary. Inspiration tags do not count as a required game." So nothing can be submitted until Melty adds Eslabong to its catalog. No MCP tool requests a game; the creator has to ask Melty. Build/test can continue meanwhile.
