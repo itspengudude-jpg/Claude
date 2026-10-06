@@ -1,0 +1,13 @@
+{
+  "_about": "Game systems the mod adds. One row = one Papyrus script / quest stage group.",
+  "columns": ["id","name","script","quest","description","params","unlockSeason"],
+  "rows": [
+    {"id":"sys_market","name":"Merc Market","script":"FAC_MarketScript","quest":"FAC_LeagueQuest","description":"Organizer offers the hireable mercs available this season; hire costs signingFee caps.","params":{"offersPerSeason":8,"maxRoster":6},"unlockSeason":1},
+    {"id":"sys_wages","name":"Weekly Wages","script":"FAC_WagesScript","quest":"FAC_LeagueQuest","description":"Every 7 in-game days, each merc's wage is taken from player caps; unpaid mercs leave.","params":{"daysPerWeek":7,"graceWeeks":1},"unlockSeason":1},
+    {"id":"sys_league","name":"League & Table","script":"FAC_LeagueScript","quest":"FAC_LeagueQuest","description":"Round-robin fixtures, 3 pts win / 1 draw, table shown via message box at the organizer.","params":{"pointsWin":3,"pointsDraw":1,"drawTimeLimitSec":180},"unlockSeason":1},
+    {"id":"sys_match","name":"Match Day","script":"FAC_MatchScript","quest":"FAC_MatchQuest","description":"Pick lineup + tactic, player is moved to the stands, both squads spawn in the cage and fight; last squad standing wins, timeout = draw. Rival-vs-rival results are simulated by strength.","params":{"spectatorMarker":"hook_stands_marker","sideAMarker":"hook_cage_a","sideBMarker":"hook_cage_b"},"unlockSeason":1},
+    {"id":"sys_progression","name":"Merc Progression","script":"FAC_MercScript","quest":"FAC_LeagueQuest","description":"XP per match, level-ups raise health/damage and wage; injuries bench a merc for N matches.","params":{"xpWin":30,"xpLoss":12,"xpPerKnockdown":10,"xpPerLevel":50,"healthPerLevel":12,"damagePerLevel":0.05,"injuryMatchesMin":1,"injuryMatchesMax":3},"unlockSeason":1},
+    {"id":"sys_cup","name":"Knockout Cup","script":"FAC_CupScript","quest":"FAC_LeagueQuest","description":"Mid-season single-elimination cup between all clubs; winner gets cupPrize.","params":{"cupPrize":400},"unlockSeason":2},
+    {"id":"sys_poaching","name":"Poaching Offers","script":"FAC_PoachScript","quest":"FAC_LeagueQuest","description":"After a season, a rival offers caps for your highest-level merc; accept or refuse.","params":{"offerMult":2.5},"unlockSeason":2}
+  ]
+}

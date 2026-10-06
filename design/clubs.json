@@ -1,0 +1,11 @@
+{
+  "_about": "League clubs. One row = one club (generates a FACT faction + a ClubData struct). Rival rosters are rival merc rows.",
+  "columns": ["id","name","isPlayer","strength","roster","tactic","joinsSeason","factionColor"],
+  "rows": [
+    {"id":"club_player","name":"(player names it) Sole Survivors","isPlayer":true,"strength":0,"roster":[],"tactic":"tac_aggressive","joinsSeason":1,"factionColor":"#3a7bd5"},
+    {"id":"club_scrappers","name":"Hangman's Scrappers","isPlayer":false,"strength":1,"roster":["rival_scrap_1","rival_scrap_2","rival_scrap_3"],"tactic":"tac_aggressive","joinsSeason":1,"factionColor":"#c0392b"},
+    {"id":"club_ironsides","name":"Lexington Ironsides","isPlayer":false,"strength":2,"roster":["rival_iron_1","rival_iron_2","rival_iron_3"],"tactic":"tac_hold","joinsSeason":1,"factionColor":"#7f8c8d"},
+    {"id":"club_greenjackets","name":"Diamond Green Jackets","isPlayer":false,"strength":3,"roster":["rival_green_1","rival_green_2","rival_green_3"],"tactic":"tac_focus","joinsSeason":1,"factionColor":"#27ae60"},
+    {"id":"club_champions","name":"Atom's Chosen","isPlayer":false,"strength":5,"roster":["rival_champ_1","rival_champ_2","rival_champ_3","rival_champ_4"],"tactic":"tac_flank","joinsSeason":4,"factionColor":"#f1c40f"}
+  ]
+}

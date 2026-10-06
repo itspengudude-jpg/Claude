@@ -1,0 +1,10 @@
+{
+  "_about": "Season structure and what each season adds. One row = one season (season 4 repeats for 5+).",
+  "columns": ["season","clubs","squadSize","matchesPerClubPair","prizePerWin","prizePerDraw","trophyPrize","unlocks","marketRefresh"],
+  "rows": [
+    {"season":1,"clubs":["club_player","club_scrappers","club_ironsides","club_greenjackets"],"squadSize":3,"matchesPerClubPair":1,"prizePerWin":100,"prizePerDraw":40,"trophyPrize":500,"unlocks":["sys_league","sys_market","sys_progression"],"marketRefresh":true},
+    {"season":2,"clubs":["club_player","club_scrappers","club_ironsides","club_greenjackets"],"squadSize":3,"matchesPerClubPair":1,"prizePerWin":150,"prizePerDraw":60,"trophyPrize":800,"unlocks":["sys_cup","sys_poaching"],"marketRefresh":true},
+    {"season":3,"clubs":["club_player","club_scrappers","club_ironsides","club_greenjackets"],"squadSize":4,"matchesPerClubPair":1,"prizePerWin":200,"prizePerDraw":80,"trophyPrize":1200,"unlocks":["tac_flank"],"marketRefresh":true},
+    {"season":4,"clubs":["club_player","club_scrappers","club_ironsides","club_greenjackets","club_champions"],"squadSize":4,"matchesPerClubPair":1,"prizePerWin":250,"prizePerDraw":100,"trophyPrize":2000,"unlocks":["club_champions"],"marketRefresh":true}
+  ]
+}

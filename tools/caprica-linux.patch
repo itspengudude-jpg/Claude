@@ -1,0 +1,72 @@
+diff --git a/Caprica/common/AsmUtils.h b/Caprica/common/AsmUtils.h
+index 8803c9e..a38966b 100644
+--- a/Caprica/common/AsmUtils.h
++++ b/Caprica/common/AsmUtils.h
+@@ -7,6 +7,10 @@
+ #include <common/sse2neon.h>
+ 
+ #else
++#ifdef _MSC_VER
+ #include <intrin.h>
++#else
++#include <x86intrin.h>
++#endif
+ #endif
+ 
+diff --git a/Caprica/common/CapricaInputFile.cpp b/Caprica/common/CapricaInputFile.cpp
+index ca8d0e8..14cf770 100644
+--- a/Caprica/common/CapricaInputFile.cpp
++++ b/Caprica/common/CapricaInputFile.cpp
+@@ -4,6 +4,7 @@
+ #include <common/FSUtils.h>
+ #include <common/parser/PapyrusProject.h>
+ #include <filesystem>
++#include <algorithm>
+ 
+ namespace caprica {
+ 
+diff --git a/Caprica/common/FSUtils.cpp b/Caprica/common/FSUtils.cpp
+index 3ce777a..9a674ea 100644
+--- a/Caprica/common/FSUtils.cpp
++++ b/Caprica/common/FSUtils.cpp
+@@ -2,13 +2,15 @@
+ 
+ #include <fcntl.h>
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__linux__)
+ #include <sys/uio.h>
++#include <unistd.h>
+ #else
+ #include <io.h>
+ #endif
+ 
+ #include <cstring>
++#include <algorithm>
+ #include <filesystem>
+ #include <future>
+ #include <sstream>
+diff --git a/Caprica/common/OSUtils.cpp b/Caprica/common/OSUtils.cpp
+index c994329..59285d9 100644
+--- a/Caprica/common/OSUtils.cpp
++++ b/Caprica/common/OSUtils.cpp
+@@ -41,8 +41,8 @@ void debugBreak() {
+   if (IsDebuggerPresent())
+     __debugbreak();
+ #else
+-  if (ptrace(PTRACE_TRACEME, 0, reinterpret_cast<caddr_t>(1), 0) == -1)
+-    raise(SIGTRAP);
++  // debugger detection not needed on Linux build
++
+ #endif
+ }
+ 
+@@ -56,7 +56,7 @@ std::string getUserName() {
+ #else
+   char userNameBuf[256];
+   if (getlogin_r(userNameBuf, sizeof(userNameBuf)) != 0)
+-    throw std::runtime_error("Failed to get the user name!");
++    return {"modder"};
+   return {userNameBuf};
+ #endif
+ }

@@ -1,0 +1,10 @@
+{
+  "_about": "Match tactics picked from the stands. One row = one CSTY combat style + a TacticData struct.",
+  "columns": ["id","name","description","aggression","confidence","offensiveMult","defensiveMult","targetRule","unlockSeason"],
+  "rows": [
+    {"id":"tac_aggressive","name":"All-Out Attack","description":"Charge in. More damage, more injuries.","aggression":2,"confidence":4,"offensiveMult":0.9,"defensiveMult":0.1,"targetRule":"nearest","unlockSeason":1},
+    {"id":"tac_hold","name":"Hold the Line","description":"Keep distance and trade carefully.","aggression":1,"confidence":2,"offensiveMult":0.4,"defensiveMult":0.7,"targetRule":"nearest","unlockSeason":1},
+    {"id":"tac_focus","name":"Focus Their Best","description":"Everyone targets the strongest rival first.","aggression":1,"confidence":3,"offensiveMult":0.7,"defensiveMult":0.3,"targetRule":"highestLevel","unlockSeason":1},
+    {"id":"tac_flank","name":"Flank the Weak","description":"Pick off their lowest-health fighter first.","aggression":2,"confidence":3,"offensiveMult":0.8,"defensiveMult":0.2,"targetRule":"lowestHealth","unlockSeason":3}
+  ]
+}

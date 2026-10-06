@@ -1,0 +1,26 @@
+{
+  "_about": "Every place the mod touches Fallout 4. One row = one record added or one vanilla record referenced. 'verified' must become true by reading Fallout4.esm (Mutagen) before build.",
+  "columns": ["id","kind","target","editorId","formKey","purpose","verified"],
+  "rows": [
+    {"id":"hook_combatzone_cell","kind":"vanilla-ref","target":"CELL","editorId":"","formKey":"","purpose":"Combat Zone interior where matches are held","verified":false},
+    {"id":"hook_cait_quest","kind":"vanilla-ref","target":"QUST","editorId":"","formKey":"","purpose":"Combat Zone/Cait recruitment quest; league opens only after it is done so raiders there don't interfere","verified":false},
+    {"id":"hook_organizer","kind":"new","target":"NPC_+REFR","editorId":"FAC_Organizer","formKey":"new","purpose":"League organizer NPC standing near the cage; dialogue menu: Market, Lineup & Tactic, Next Match, Table","verified":true},
+    {"id":"hook_stands_marker","kind":"new","target":"REFR(XMarkerHeading)","editorId":"FAC_StandsMarker","formKey":"new","purpose":"Where the player watches from","verified":false},
+    {"id":"hook_cage_a","kind":"new","target":"REFR(XMarkerHeading)","editorId":"FAC_CageA","formKey":"new","purpose":"Player squad spawn in cage","verified":false},
+    {"id":"hook_cage_b","kind":"new","target":"REFR(XMarkerHeading)","editorId":"FAC_CageB","formKey":"new","purpose":"Rival squad spawn in cage","verified":false},
+    {"id":"hook_start_note","kind":"new","target":"QUST","editorId":"FAC_StartQuest","formKey":"new","purpose":"Start-game-enabled quest that adds a map marker objective pointing to the Combat Zone","verified":true},
+    {"id":"hook_caps","kind":"vanilla-ref","target":"MISC","editorId":"Caps001","formKey":"","purpose":"Fees, wages and prizes","verified":false},
+    {"id":"weap_board","kind":"vanilla-ref","target":"WEAP","editorId":"","formKey":"","purpose":"Melee weapon","verified":false},
+    {"id":"weap_lead_pipe","kind":"vanilla-ref","target":"WEAP","editorId":"","formKey":"","purpose":"Melee weapon","verified":false},
+    {"id":"weap_machete","kind":"vanilla-ref","target":"WEAP","editorId":"","formKey":"","purpose":"Melee weapon","verified":false},
+    {"id":"weap_switchblade","kind":"vanilla-ref","target":"WEAP","editorId":"","formKey":"","purpose":"Melee weapon","verified":false},
+    {"id":"weap_super_sledge","kind":"vanilla-ref","target":"WEAP","editorId":"","formKey":"","purpose":"Melee weapon","verified":false},
+    {"id":"weap_pipe_pistol","kind":"vanilla-ref","target":"WEAP","editorId":"","formKey":"","purpose":"Gun","verified":false},
+    {"id":"weap_pipe_rifle","kind":"vanilla-ref","target":"WEAP","editorId":"","formKey":"","purpose":"Gun","verified":false},
+    {"id":"weap_hunting_rifle","kind":"vanilla-ref","target":"WEAP","editorId":"","formKey":"","purpose":"Gun","verified":false},
+    {"id":"outfit_raider_heavy","kind":"vanilla-ref","target":"OTFT","editorId":"","formKey":"","purpose":"Merc outfit","verified":false},
+    {"id":"outfit_leather_light","kind":"vanilla-ref","target":"OTFT","editorId":"","formKey":"","purpose":"Merc outfit","verified":false},
+    {"id":"outfit_metal_medium","kind":"vanilla-ref","target":"OTFT","editorId":"","formKey":"","purpose":"Merc outfit","verified":false},
+    {"id":"outfit_combat_medium","kind":"vanilla-ref","target":"OTFT","editorId":"","formKey":"","purpose":"Merc outfit","verified":false}
+  ]
+}

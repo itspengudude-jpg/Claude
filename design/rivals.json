@@ -1,0 +1,19 @@
+{
+  "_about": "Rival club fighters (not hireable unless poached in season 2+). One row = one NPC_ record.",
+  "columns": ["id","club","name","level","health","damageMult","weapon","outfit"],
+  "rows": [
+    {"id":"rival_scrap_1","club":"club_scrappers","name":"Scrapper Lug","level":1,"health":140,"damageMult":0.9,"weapon":"weap_board","outfit":"outfit_raider_heavy"},
+    {"id":"rival_scrap_2","club":"club_scrappers","name":"Scrapper Nails","level":1,"health":100,"damageMult":1.0,"weapon":"weap_pipe_pistol","outfit":"outfit_leather_light"},
+    {"id":"rival_scrap_3","club":"club_scrappers","name":"Scrapper Twitch","level":2,"health":110,"damageMult":1.0,"weapon":"weap_switchblade","outfit":"outfit_leather_light"},
+    {"id":"rival_iron_1","club":"club_ironsides","name":"Ironside Mags","level":3,"health":200,"damageMult":0.9,"weapon":"weap_lead_pipe","outfit":"outfit_metal_medium"},
+    {"id":"rival_iron_2","club":"club_ironsides","name":"Ironside Coil","level":3,"health":150,"damageMult":1.1,"weapon":"weap_pipe_rifle","outfit":"outfit_metal_medium"},
+    {"id":"rival_iron_3","club":"club_ironsides","name":"Ironside Rust","level":3,"health":170,"damageMult":1.0,"weapon":"weap_machete","outfit":"outfit_metal_medium"},
+    {"id":"rival_green_1","club":"club_greenjackets","name":"Jacket Pell","level":4,"health":150,"damageMult":1.2,"weapon":"weap_hunting_rifle","outfit":"outfit_combat_medium"},
+    {"id":"rival_green_2","club":"club_greenjackets","name":"Jacket Wren","level":4,"health":140,"damageMult":1.2,"weapon":"weap_pipe_rifle","outfit":"outfit_combat_medium"},
+    {"id":"rival_green_3","club":"club_greenjackets","name":"Jacket Bosco","level":5,"health":220,"damageMult":1.1,"weapon":"weap_machete","outfit":"outfit_combat_medium"},
+    {"id":"rival_champ_1","club":"club_champions","name":"Chosen Ember","level":8,"health":260,"damageMult":1.4,"weapon":"weap_super_sledge","outfit":"outfit_combat_medium"},
+    {"id":"rival_champ_2","club":"club_champions","name":"Chosen Halo","level":8,"health":200,"damageMult":1.5,"weapon":"weap_hunting_rifle","outfit":"outfit_combat_medium"},
+    {"id":"rival_champ_3","club":"club_champions","name":"Chosen Glow","level":8,"health":220,"damageMult":1.4,"weapon":"weap_machete","outfit":"outfit_combat_medium"},
+    {"id":"rival_champ_4","club":"club_champions","name":"Chosen Fission","level":9,"health":300,"damageMult":1.2,"weapon":"weap_lead_pipe","outfit":"outfit_metal_medium"}
+  ]
+}

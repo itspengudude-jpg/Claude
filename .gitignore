@@ -1,0 +1,5 @@
+build/
+dist/
+*.pex
+# Bethesda base script sources are never committed here
+base/
