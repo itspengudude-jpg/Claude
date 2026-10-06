@@ -1,0 +1,115 @@
+{
+ "_about": "New-game starts (Kenshi's game-start screen). kingdom 'any' = the player picks an employer by dialogue with the Hub recruiters.",
+ "columns": [
+  "id",
+  "name",
+  "kingdom",
+  "location",
+  "rank",
+  "money",
+  "squad",
+  "backstory"
+ ],
+ "rows": [
+  {
+   "id": "start_prisoner",
+   "name": "Escaped Prisoner",
+   "kingdom": "free_realm",
+   "location": "town_rebirth",
+   "rank": "nobody",
+   "money": 0,
+   "squad": [
+    "start_char_player",
+    "start_char_cellmate_a",
+    "start_char_cellmate_b"
+   ],
+   "backstory": "You were sold to the Holy Nation's mine at Rebirth. Tonight the guards are drunk, the chains are rusted, and two cellmates swear they'll follow you out. The Free Realm will shelter escaped slaves."
+  },
+  {
+   "id": "start_nobody_holy_nation",
+   "name": "A Nobody of The Holy Nation",
+   "kingdom": "holy_nation",
+   "location": "town_blister_hill",
+   "rank": "nobody",
+   "money": 500,
+   "squad": [
+    "start_char_player"
+   ],
+   "backstory": "No name, no clan, no friends. Just a few cats and a long road. Lords here don't know you exist. Yet."
+  },
+  {
+   "id": "start_nobody_united_cities",
+   "name": "A Nobody of The United Cities",
+   "kingdom": "united_cities",
+   "location": "town_stoat",
+   "rank": "nobody",
+   "money": 500,
+   "squad": [
+    "start_char_player"
+   ],
+   "backstory": "No name, no clan, no friends. Just a few cats and a long road. Lords here don't know you exist. Yet."
+  },
+  {
+   "id": "start_nobody_shek",
+   "name": "A Nobody of The Shek Kingdom",
+   "kingdom": "shek",
+   "location": "town_squin",
+   "rank": "nobody",
+   "money": 500,
+   "squad": [
+    "start_char_player"
+   ],
+   "backstory": "No name, no clan, no friends. Just a few cats and a long road. Lords here don't know you exist. Yet."
+  },
+  {
+   "id": "start_nobody_free_realm",
+   "name": "A Nobody of The Free Realm",
+   "kingdom": "free_realm",
+   "location": "town_spring",
+   "rank": "nobody",
+   "money": 500,
+   "squad": [
+    "start_char_player"
+   ],
+   "backstory": "No name, no clan, no friends. Just a few cats and a long road. Lords here don't know you exist. Yet."
+  },
+  {
+   "id": "start_nobody_western_hive",
+   "name": "A Nobody of The Western Hive Throne",
+   "kingdom": "western_hive",
+   "location": "town_western_hive_village",
+   "rank": "nobody",
+   "money": 500,
+   "squad": [
+    "start_char_player"
+   ],
+   "backstory": "No name, no clan, no friends. Just a few cats and a long road. Lords here don't know you exist. Yet."
+  },
+  {
+   "id": "start_nobody_deadcat",
+   "name": "A Nobody of The Deadcat Crown",
+   "kingdom": "deadcat",
+   "location": "town_gatherer_village",
+   "rank": "nobody",
+   "money": 500,
+   "squad": [
+    "start_char_player"
+   ],
+   "backstory": "No name, no clan, no friends. Just a few cats and a long road. Lords here don't know you exist. Yet."
+  },
+  {
+   "id": "start_last_contract",
+   "name": "The Last Contract",
+   "kingdom": "any",
+   "location": "town_hub",
+   "rank": "mercenary",
+   "money": 1500,
+   "squad": [
+    "start_char_player",
+    "start_char_hound_a",
+    "start_char_hound_b"
+   ],
+   "backstory": "The Ashen Hounds held Skinner's Pass for nine days for a lord who never sent relief. Three of you walked out. You carry the company banner and a signed, unpaid contract. Every kingdom keeps a recruiter drinking in the Hub. The first one you shake hands with is your new employer."
+  }
+ ]
+}

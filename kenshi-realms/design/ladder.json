@@ -1,0 +1,41 @@
+{
+ "_about": "The climb with each kingdom. minRelation is Kenshi's own faction relation; renown is tracked by the plugin.",
+ "columns": [
+  "id",
+  "name",
+  "minRelation",
+  "minRenown",
+  "offeredBy",
+  "grants",
+  "dialogue"
+ ],
+ "rows": [
+  {
+   "id": "nobody",
+   "name": "Nobody",
+   "minRelation": -100,
+   "minRenown": 0,
+   "offeredBy": "none",
+   "grants": "tier-1 recruits of kingdoms that don't hate you",
+   "dialogue": "none"
+  },
+  {
+   "id": "mercenary",
+   "name": "Mercenary",
+   "minRelation": 20,
+   "minRenown": 100,
+   "offeredBy": "any lord",
+   "grants": "contract: wage per day, pay per enemy lord captured, tier-2 recruits, joins the kingdom's wars",
+   "dialogue": "dlg_merc_contract"
+  },
+  {
+   "id": "vassal",
+   "name": "Vassal",
+   "minRelation": 50,
+   "minRenown": 400,
+   "offeredBy": "ruler",
+   "grants": "oath: your own clan in the kingdom, a fief (fiefs.json), a vote, tier-3 recruits",
+   "dialogue": "dlg_vassal_oath"
+  }
+ ]
+}

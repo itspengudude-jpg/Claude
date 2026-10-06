@@ -1,0 +1,68 @@
+{
+ "_about": "One row per kingdom. A kingdom is built on an existing Kenshi faction so its towns, squads and lore stay intact.",
+ "columns": [
+  "id",
+  "name",
+  "faction",
+  "capital",
+  "ruler",
+  "culture",
+  "colors"
+ ],
+ "rows": [
+  {
+   "id": "holy_nation",
+   "name": "The Holy Nation",
+   "faction": "fac_holy_nation",
+   "capital": "town_stack",
+   "ruler": "phoenix",
+   "culture": "Okran's zealots; despise skeletons, hivers and shek",
+   "colors": "gold/white"
+  },
+  {
+   "id": "united_cities",
+   "name": "The United Cities",
+   "faction": "fac_united_cities",
+   "capital": "town_heft",
+   "ruler": "tengu",
+   "culture": "Noble houses ruling by coin and slavery",
+   "colors": "purple/gold"
+  },
+  {
+   "id": "shek",
+   "name": "The Shek Kingdom",
+   "faction": "fac_shek",
+   "capital": "town_admag",
+   "ruler": "esata",
+   "culture": "Warrior horns who honour strength above all",
+   "colors": "red/bone"
+  },
+  {
+   "id": "free_realm",
+   "name": "The Free Realm",
+   "faction": "fac_anti_slavers",
+   "capital": "town_spring",
+   "ruler": "tinfist",
+   "culture": "Freed slaves and rebels sworn to break the chains",
+   "colors": "green/grey"
+  },
+  {
+   "id": "western_hive",
+   "name": "The Western Hive Throne",
+   "faction": "fac_western_hive",
+   "capital": "town_western_hive_village",
+   "ruler": "hive_prince",
+   "culture": "A Hive Prince's brood turned feudal realm",
+   "colors": "ochre/black"
+  },
+  {
+   "id": "deadcat",
+   "name": "The Deadcat Crown",
+   "faction": "fac_deadcat",
+   "capital": "town_fishing_village_north",
+   "ruler": "orvo",
+   "culture": "Refugee crown sworn to retake its city from the Cannibals",
+   "colors": "sea-blue/rust"
+  }
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "_about": "Starting relations between kingdoms (every pair). The plugin's votes change them during play.",
+ "columns": [
+  "id",
+  "a",
+  "b",
+  "stateAtStart"
+ ],
+ "rows": [
+  {
+   "id": "holy_nation__united_cities",
+   "a": "holy_nation",
+   "b": "united_cities",
+   "stateAtStart": "alliance"
+  },
+  {
+   "id": "holy_nation__shek",
+   "a": "holy_nation",
+   "b": "shek",
+   "stateAtStart": "war"
+  },
+  {
+   "id": "holy_nation__free_realm",
+   "a": "holy_nation",
+   "b": "free_realm",
+   "stateAtStart": "war"
+  },
+  {
+   "id": "holy_nation__western_hive",
+   "a": "holy_nation",
+   "b": "western_hive",
+   "stateAtStart": "war"
+  },
+  {
+   "id": "holy_nation__deadcat",
+   "a": "holy_nation",
+   "b": "deadcat",
+   "stateAtStart": "peace"
+  },
+  {
+   "id": "united_cities__shek",
+   "a": "united_cities",
+   "b": "shek",
+   "stateAtStart": "peace"
+  },
+  {
+   "id": "united_cities__free_realm",
+   "a": "united_cities",
+   "b": "free_realm",
+   "stateAtStart": "war"
+  },
+  {
+   "id": "united_cities__western_hive",
+   "a": "united_cities",
+   "b": "western_hive",
+   "stateAtStart": "peace"
+  },
+  {
+   "id": "united_cities__deadcat",
+   "a": "united_cities",
+   "b": "deadcat",
+   "stateAtStart": "peace"
+  },
+  {
+   "id": "shek__free_realm",
+   "a": "shek",
+   "b": "free_realm",
+   "stateAtStart": "alliance"
+  },
+  {
+   "id": "shek__western_hive",
+   "a": "shek",
+   "b": "western_hive",
+   "stateAtStart": "peace"
+  },
+  {
+   "id": "shek__deadcat",
+   "a": "shek",
+   "b": "deadcat",
+   "stateAtStart": "peace"
+  },
+  {
+   "id": "free_realm__western_hive",
+   "a": "free_realm",
+   "b": "western_hive",
+   "stateAtStart": "peace"
+  },
+  {
+   "id": "free_realm__deadcat",
+   "a": "free_realm",
+   "b": "deadcat",
+   "stateAtStart": "peace"
+  },
+  {
+   "id": "western_hive__deadcat",
+   "a": "western_hive",
+   "b": "deadcat",
+   "stateAtStart": "war"
+  },
+  {
+   "id": "deadcat__cannibals",
+   "a": "deadcat",
+   "b": "fac_cannibals",
+   "stateAtStart": "war"
+  }
+ ]
+}

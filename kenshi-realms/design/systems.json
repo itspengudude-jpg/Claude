@@ -1,0 +1,122 @@
+{
+ "_about": "Every game system the mod adds. layer 'data' = in the .mod (FCS records); 'plugin' = KenshiRealms.dll on RE_Kenshi.",
+ "columns": [
+  "id",
+  "name",
+  "layer",
+  "what",
+  "params"
+ ],
+ "rows": [
+  {
+   "id": "sys_kingdoms",
+   "name": "Kingdoms, clans and lords",
+   "layer": "data",
+   "what": "Factions, lord characters, war parties and seats from kingdoms/clans/lords sheets",
+   "params": {}
+  },
+  {
+   "id": "sys_starts",
+   "name": "Starts",
+   "layer": "data",
+   "what": "Game-start records from starts.json",
+   "params": {}
+  },
+  {
+   "id": "sys_recruit",
+   "name": "Recruitment",
+   "layer": "data",
+   "what": "Hireable troop templates in each recruitAt town, gated by rank",
+   "params": {
+    "rankCheck": "kl_dialog_flag"
+   }
+  },
+  {
+   "id": "sys_renown",
+   "name": "Renown",
+   "layer": "plugin",
+   "what": "Earned for winning fights against a kingdom's enemies and capturing lords",
+   "params": {
+    "perEnemyLordCaptured": 40,
+    "perEnemySquadBeaten": 5,
+    "hook": "kl_character_death"
+   }
+  },
+  {
+   "id": "sys_ladder",
+   "name": "Nobody → Mercenary → Vassal",
+   "layer": "plugin",
+   "what": "Checks ladder.json thresholds; unlocks contract/oath dialogue",
+   "params": {
+    "hook": "kl_dialog_flag"
+   }
+  },
+  {
+   "id": "sys_merc_pay",
+   "name": "Mercenary pay",
+   "layer": "plugin",
+   "what": "Daily contract wage plus bounty per enemy lord captured",
+   "params": {
+    "wagePerDay": 150,
+    "perLordCaptured": 1000,
+    "hook": "kl_player_money"
+   }
+  },
+  {
+   "id": "sys_influence",
+   "name": "Influence",
+   "layer": "plugin",
+   "what": "Each clan (yours too) earns influence from battles and fiefs; it decays daily and is spent on votes",
+   "params": {
+    "perBattleWon": 10,
+    "perFiefPerDay": 1,
+    "decayPerDay": 0.02,
+    "hook": "kl_daily_tick"
+   }
+  },
+  {
+   "id": "sys_votes",
+   "name": "Kingdom votes",
+   "layer": "plugin",
+   "what": "Every few days a kingdom may vote to declare war, make peace or grant an open fief; AI lords vote by honor/valor/greed, players spend influence",
+   "params": {
+    "everyDays": 7,
+    "kinds": [
+     "declare_war",
+     "make_peace",
+     "grant_fief"
+    ],
+    "hook": "kl_faction_relations"
+   }
+  },
+  {
+   "id": "sys_defection",
+   "name": "Lord defection",
+   "layer": "plugin",
+   "what": "An unhappy, greedy lord whose clan is losing may change kingdom",
+   "params": {
+    "checkEveryDays": 14,
+    "minGreed": 60,
+    "hook": "kl_daily_tick"
+   }
+  },
+  {
+   "id": "sys_fief_income",
+   "name": "Fief income",
+   "layer": "plugin",
+   "what": "Pays fiefs.incomePerDay to the holder, minus garrison wages",
+   "params": {
+    "hook": "kl_daily_tick"
+   }
+  },
+  {
+   "id": "sys_save",
+   "name": "Save state",
+   "layer": "plugin",
+   "what": "Renown, influence, fief holders and contracts saved with the game",
+   "params": {
+    "hook": "kl_savegame"
+   }
+  }
+ ]
+}

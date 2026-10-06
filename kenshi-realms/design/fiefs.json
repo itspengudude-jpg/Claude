@@ -1,0 +1,135 @@
+{
+ "_about": "Grantable fiefs. Never flipped by capturing lords (by design). holderAtStart 'open' = the ruler can grant it (vote_grant_fief). Income is paid by the plugin's daily tick.",
+ "columns": [
+  "id",
+  "kingdom",
+  "name",
+  "site",
+  "incomePerDay",
+  "garrison",
+  "garrisonSize",
+  "holderAtStart"
+ ],
+ "rows": [
+  {
+   "id": "holy_nation_fief_1",
+   "kingdom": "holy_nation",
+   "name": "Ember Field",
+   "site": "site_holy_nation_fief_1",
+   "incomePerDay": 120,
+   "garrison": "hn_holy_guard",
+   "garrisonSize": 4,
+   "holderAtStart": "open"
+  },
+  {
+   "id": "holy_nation_fief_2",
+   "kingdom": "holy_nation",
+   "name": "Psalm Ridge",
+   "site": "site_holy_nation_fief_2",
+   "incomePerDay": 80,
+   "garrison": "hn_holy_guard",
+   "garrisonSize": 3,
+   "holderAtStart": "open"
+  },
+  {
+   "id": "united_cities_fief_1",
+   "kingdom": "united_cities",
+   "name": "Silkwater Estate",
+   "site": "site_united_cities_fief_1",
+   "incomePerDay": 120,
+   "garrison": "uc_noble_guard",
+   "garrisonSize": 4,
+   "holderAtStart": "open"
+  },
+  {
+   "id": "united_cities_fief_2",
+   "kingdom": "united_cities",
+   "name": "Copper Terrace",
+   "site": "site_united_cities_fief_2",
+   "incomePerDay": 80,
+   "garrison": "uc_noble_guard",
+   "garrisonSize": 3,
+   "holderAtStart": "open"
+  },
+  {
+   "id": "shek_fief_1",
+   "kingdom": "shek",
+   "name": "Horn Rock",
+   "site": "site_shek_fief_1",
+   "incomePerDay": 120,
+   "garrison": "shek_warrior",
+   "garrisonSize": 4,
+   "holderAtStart": "open"
+  },
+  {
+   "id": "shek_fief_2",
+   "kingdom": "shek",
+   "name": "Bonepit Hollow",
+   "site": "site_shek_fief_2",
+   "incomePerDay": 80,
+   "garrison": "shek_warrior",
+   "garrisonSize": 3,
+   "holderAtStart": "open"
+  },
+  {
+   "id": "free_realm_fief_1",
+   "kingdom": "free_realm",
+   "name": "Broken Chain Hold",
+   "site": "site_free_realm_fief_1",
+   "incomePerDay": 120,
+   "garrison": "fr_freeblade",
+   "garrisonSize": 4,
+   "holderAtStart": "open"
+  },
+  {
+   "id": "free_realm_fief_2",
+   "kingdom": "free_realm",
+   "name": "Spring Gate",
+   "site": "site_free_realm_fief_2",
+   "incomePerDay": 80,
+   "garrison": "fr_freeblade",
+   "garrisonSize": 3,
+   "holderAtStart": "open"
+  },
+  {
+   "id": "western_hive_fief_1",
+   "kingdom": "western_hive",
+   "name": "Brood Glade",
+   "site": "site_western_hive_fief_1",
+   "incomePerDay": 120,
+   "garrison": "hive_soldier",
+   "garrisonSize": 4,
+   "holderAtStart": "open"
+  },
+  {
+   "id": "western_hive_fief_2",
+   "kingdom": "western_hive",
+   "name": "Drone Hollow",
+   "site": "site_western_hive_fief_2",
+   "incomePerDay": 80,
+   "garrison": "hive_soldier",
+   "garrisonSize": 3,
+   "holderAtStart": "open"
+  },
+  {
+   "id": "deadcat_fief_1",
+   "kingdom": "deadcat",
+   "name": "Saltmarsh Landing",
+   "site": "site_deadcat_fief_1",
+   "incomePerDay": 120,
+   "garrison": "dc_reclaimer",
+   "garrisonSize": 4,
+   "holderAtStart": "open"
+  },
+  {
+   "id": "deadcat_fief_2",
+   "kingdom": "deadcat",
+   "name": "Driftwood Watch",
+   "site": "site_deadcat_fief_2",
+   "incomePerDay": 80,
+   "garrison": "dc_reclaimer",
+   "garrisonSize": 3,
+   "holderAtStart": "open"
+  }
+ ]
+}

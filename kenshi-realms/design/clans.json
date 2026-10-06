@@ -1,0 +1,96 @@
+{
+ "_about": "Two clans per kingdom; the first is the ruling clan. Clans gain influence and hold fiefs (politics.json).",
+ "columns": [
+  "id",
+  "name",
+  "kingdom",
+  "leader",
+  "seat"
+ ],
+ "rows": [
+  {
+   "id": "pure_flame",
+   "name": "House of the Pure Flame",
+   "kingdom": "holy_nation",
+   "leader": "phoenix",
+   "seat": "town_stack"
+  },
+  {
+   "id": "okrans_shield",
+   "name": "Order of Okran's Shield",
+   "kingdom": "holy_nation",
+   "leader": "seraph",
+   "seat": "town_blister_hill"
+  },
+  {
+   "id": "house_tengu",
+   "name": "House Tengu",
+   "kingdom": "united_cities",
+   "leader": "tengu",
+   "seat": "town_heft"
+  },
+  {
+   "id": "house_merin",
+   "name": "House Merin",
+   "kingdom": "united_cities",
+   "leader": "merin",
+   "seat": "town_port_north"
+  },
+  {
+   "id": "stone_golem",
+   "name": "Clan of the Stone Golem",
+   "kingdom": "shek",
+   "leader": "esata",
+   "seat": "town_admag"
+  },
+  {
+   "id": "broken_horn",
+   "name": "Clan of the Broken Horn",
+   "kingdom": "shek",
+   "leader": "tohn",
+   "seat": "town_squin"
+  },
+  {
+   "id": "chainbreakers",
+   "name": "The Chainbreakers",
+   "kingdom": "free_realm",
+   "leader": "tinfist",
+   "seat": "town_spring"
+  },
+  {
+   "id": "flotsam_covenant",
+   "name": "The Flotsam Covenant",
+   "kingdom": "free_realm",
+   "leader": "moll",
+   "seat": "town_flotsam_camp"
+  },
+  {
+   "id": "princes_brood",
+   "name": "The Prince's Brood",
+   "kingdom": "western_hive",
+   "leader": "hive_prince",
+   "seat": "town_western_hive_village"
+  },
+  {
+   "id": "drone_spire",
+   "name": "The Drone Spire",
+   "kingdom": "western_hive",
+   "leader": "kesh",
+   "seat": "town_western_hive_village"
+  },
+  {
+   "id": "lost_city",
+   "name": "House of the Lost City",
+   "kingdom": "deadcat",
+   "leader": "orvo",
+   "seat": "town_fishing_village_north"
+  },
+  {
+   "id": "gatherer_kin",
+   "name": "The Gatherer Kin",
+   "kingdom": "deadcat",
+   "leader": "ilsa",
+   "seat": "town_gatherer_village"
+  }
+ ]
+}

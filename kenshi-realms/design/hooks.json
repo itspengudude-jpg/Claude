@@ -1,0 +1,779 @@
+{
+ "_about": "Every place the mod touches Kenshi. vanilla-ref rows need their stringId read from gamedata.base (FCS or OpenConstructionSet); kenshilib rows need the KenshiLib function confirmed. 'verified' must be true before build.",
+ "columns": [
+  "id",
+  "kind",
+  "target",
+  "name",
+  "stringId",
+  "purpose",
+  "verified"
+ ],
+ "rows": [
+  {
+   "id": "fac_holy_nation",
+   "kind": "vanilla-ref",
+   "target": "FACTION",
+   "name": "Holy Nation",
+   "stringId": "",
+   "purpose": "Existing faction the kingdom is built on (or fights)",
+   "verified": false
+  },
+  {
+   "id": "fac_united_cities",
+   "kind": "vanilla-ref",
+   "target": "FACTION",
+   "name": "United Cities",
+   "stringId": "",
+   "purpose": "Existing faction the kingdom is built on (or fights)",
+   "verified": false
+  },
+  {
+   "id": "fac_shek",
+   "kind": "vanilla-ref",
+   "target": "FACTION",
+   "name": "Shek Kingdom",
+   "stringId": "",
+   "purpose": "Existing faction the kingdom is built on (or fights)",
+   "verified": false
+  },
+  {
+   "id": "fac_anti_slavers",
+   "kind": "vanilla-ref",
+   "target": "FACTION",
+   "name": "Anti-Slavers",
+   "stringId": "",
+   "purpose": "Existing faction the kingdom is built on (or fights)",
+   "verified": false
+  },
+  {
+   "id": "fac_flotsam",
+   "kind": "vanilla-ref",
+   "target": "FACTION",
+   "name": "Flotsam Ninjas",
+   "stringId": "",
+   "purpose": "Existing faction the kingdom is built on (or fights)",
+   "verified": false
+  },
+  {
+   "id": "fac_western_hive",
+   "kind": "vanilla-ref",
+   "target": "FACTION",
+   "name": "Western Hive",
+   "stringId": "",
+   "purpose": "Existing faction the kingdom is built on (or fights)",
+   "verified": false
+  },
+  {
+   "id": "fac_deadcat",
+   "kind": "vanilla-ref",
+   "target": "FACTION",
+   "name": "Deadcat",
+   "stringId": "",
+   "purpose": "Existing faction the kingdom is built on (or fights)",
+   "verified": false
+  },
+  {
+   "id": "fac_cannibals",
+   "kind": "vanilla-ref",
+   "target": "FACTION",
+   "name": "Cannibals",
+   "stringId": "",
+   "purpose": "Existing faction the kingdom is built on (or fights)",
+   "verified": false
+  },
+  {
+   "id": "town_stack",
+   "kind": "vanilla-ref",
+   "target": "TOWN",
+   "name": "Stack",
+   "stringId": "",
+   "purpose": "Holy Nation capital, seat of Phoenix",
+   "verified": false
+  },
+  {
+   "id": "town_blister_hill",
+   "kind": "vanilla-ref",
+   "target": "TOWN",
+   "name": "Blister Hill",
+   "stringId": "",
+   "purpose": "Holy Nation 'nobody' start",
+   "verified": false
+  },
+  {
+   "id": "town_rebirth",
+   "kind": "vanilla-ref",
+   "target": "TOWN",
+   "name": "Rebirth",
+   "stringId": "",
+   "purpose": "Holy Nation slave mine: escaped-prisoner start",
+   "verified": false
+  },
+  {
+   "id": "town_heft",
+   "kind": "vanilla-ref",
+   "target": "TOWN",
+   "name": "Heft",
+   "stringId": "",
+   "purpose": "United Cities capital, seat of Tengu",
+   "verified": false
+  },
+  {
+   "id": "town_stoat",
+   "kind": "vanilla-ref",
+   "target": "TOWN",
+   "name": "Stoat",
+   "stringId": "",
+   "purpose": "United Cities 'nobody' start",
+   "verified": false
+  },
+  {
+   "id": "town_port_north",
+   "kind": "vanilla-ref",
+   "target": "TOWN",
+   "name": "Port North",
+   "stringId": "",
+   "purpose": "Seat of Lady Merin's clan",
+   "verified": false
+  },
+  {
+   "id": "town_admag",
+   "kind": "vanilla-ref",
+   "target": "TOWN",
+   "name": "Admag",
+   "stringId": "",
+   "purpose": "Shek capital, seat of Esata",
+   "verified": false
+  },
+  {
+   "id": "town_squin",
+   "kind": "vanilla-ref",
+   "target": "TOWN",
+   "name": "Squin",
+   "stringId": "",
+   "purpose": "Shek 'nobody' start",
+   "verified": false
+  },
+  {
+   "id": "town_spring",
+   "kind": "vanilla-ref",
+   "target": "TOWN",
+   "name": "Spring",
+   "stringId": "",
+   "purpose": "Free Realm seat (Anti-Slavers); confirm Tinfist's base in gamedata",
+   "verified": false
+  },
+  {
+   "id": "town_flotsam_camp",
+   "kind": "vanilla-ref",
+   "target": "TOWN",
+   "name": "Flotsam Ninja village",
+   "stringId": "",
+   "purpose": "Seat of the Flotsam Covenant clan",
+   "verified": false
+  },
+  {
+   "id": "town_western_hive_village",
+   "kind": "vanilla-ref",
+   "target": "TOWN",
+   "name": "Western Hive village",
+   "stringId": "",
+   "purpose": "Western Hive Throne seat and 'nobody' start",
+   "verified": false
+  },
+  {
+   "id": "town_fishing_village_north",
+   "kind": "vanilla-ref",
+   "target": "TOWN",
+   "name": "Fishing Village (Northern Coast)",
+   "stringId": "",
+   "purpose": "Deadcat seat-in-exile",
+   "verified": false
+  },
+  {
+   "id": "town_gatherer_village",
+   "kind": "vanilla-ref",
+   "target": "TOWN",
+   "name": "Gatherer Village (Dreg)",
+   "stringId": "",
+   "purpose": "Deadcat 'nobody' start",
+   "verified": false
+  },
+  {
+   "id": "town_deadcat_ruins",
+   "kind": "vanilla-ref",
+   "target": "TOWN",
+   "name": "Deadcat (cannibal-held city)",
+   "stringId": "",
+   "purpose": "Deadcat's lost capital; war goal against Cannibals",
+   "verified": false
+  },
+  {
+   "id": "town_hub",
+   "kind": "vanilla-ref",
+   "target": "TOWN",
+   "name": "The Hub",
+   "stringId": "",
+   "purpose": "'The Last Contract' mercenary start; recruiters of all six kingdoms",
+   "verified": false
+  },
+  {
+   "id": "npc_phoenix",
+   "kind": "vanilla-ref",
+   "target": "CHARACTER",
+   "name": "Holy Lord Phoenix",
+   "stringId": "",
+   "purpose": "Existing unique NPC made a lord (keeps their vanilla behaviour)",
+   "verified": false
+  },
+  {
+   "id": "npc_tengu",
+   "kind": "vanilla-ref",
+   "target": "CHARACTER",
+   "name": "Emperor Tengu",
+   "stringId": "",
+   "purpose": "Existing unique NPC made a lord (keeps their vanilla behaviour)",
+   "verified": false
+  },
+  {
+   "id": "npc_longen",
+   "kind": "vanilla-ref",
+   "target": "CHARACTER",
+   "name": "Lord Longen",
+   "stringId": "",
+   "purpose": "Existing unique NPC made a lord (keeps their vanilla behaviour)",
+   "verified": false
+  },
+  {
+   "id": "npc_merin",
+   "kind": "vanilla-ref",
+   "target": "CHARACTER",
+   "name": "Lady Merin",
+   "stringId": "",
+   "purpose": "Existing unique NPC made a lord (keeps their vanilla behaviour)",
+   "verified": false
+  },
+  {
+   "id": "npc_esata",
+   "kind": "vanilla-ref",
+   "target": "CHARACTER",
+   "name": "Esata the Stone Golem",
+   "stringId": "",
+   "purpose": "Existing unique NPC made a lord (keeps their vanilla behaviour)",
+   "verified": false
+  },
+  {
+   "id": "npc_seto",
+   "kind": "vanilla-ref",
+   "target": "CHARACTER",
+   "name": "Seto",
+   "stringId": "",
+   "purpose": "Existing unique NPC made a lord (keeps their vanilla behaviour)",
+   "verified": false
+  },
+  {
+   "id": "npc_tinfist",
+   "kind": "vanilla-ref",
+   "target": "CHARACTER",
+   "name": "Tinfist",
+   "stringId": "",
+   "purpose": "Existing unique NPC made a lord (keeps their vanilla behaviour)",
+   "verified": false
+  },
+  {
+   "id": "npc_moll",
+   "kind": "vanilla-ref",
+   "target": "CHARACTER",
+   "name": "Moll",
+   "stringId": "",
+   "purpose": "Existing unique NPC made a lord (keeps their vanilla behaviour)",
+   "verified": false
+  },
+  {
+   "id": "npc_hive_prince",
+   "kind": "vanilla-ref",
+   "target": "CHARACTER",
+   "name": "Western Hive Prince",
+   "stringId": "",
+   "purpose": "Existing unique NPC made a lord (keeps their vanilla behaviour)",
+   "verified": false
+  },
+  {
+   "id": "wpn_heavy_jitte",
+   "kind": "vanilla-ref",
+   "target": "WEAPON",
+   "name": "Heavy Jitte",
+   "stringId": "",
+   "purpose": "Troop weapon",
+   "verified": false
+  },
+  {
+   "id": "wpn_paladins_cross",
+   "kind": "vanilla-ref",
+   "target": "WEAPON",
+   "name": "Paladin's Cross",
+   "stringId": "",
+   "purpose": "Troop weapon",
+   "verified": false
+  },
+  {
+   "id": "wpn_katana",
+   "kind": "vanilla-ref",
+   "target": "WEAPON",
+   "name": "Katana",
+   "stringId": "",
+   "purpose": "Troop weapon",
+   "verified": false
+  },
+  {
+   "id": "wpn_naginata",
+   "kind": "vanilla-ref",
+   "target": "WEAPON",
+   "name": "Naginata",
+   "stringId": "",
+   "purpose": "Troop weapon",
+   "verified": false
+  },
+  {
+   "id": "wpn_nodachi",
+   "kind": "vanilla-ref",
+   "target": "WEAPON",
+   "name": "Nodachi",
+   "stringId": "",
+   "purpose": "Troop weapon",
+   "verified": false
+  },
+  {
+   "id": "wpn_fragment_axe",
+   "kind": "vanilla-ref",
+   "target": "WEAPON",
+   "name": "Fragment Axe",
+   "stringId": "",
+   "purpose": "Troop weapon",
+   "verified": false
+  },
+  {
+   "id": "wpn_long_cleaver",
+   "kind": "vanilla-ref",
+   "target": "WEAPON",
+   "name": "Long Cleaver",
+   "stringId": "",
+   "purpose": "Troop weapon",
+   "verified": false
+  },
+  {
+   "id": "wpn_ninja_blade",
+   "kind": "vanilla-ref",
+   "target": "WEAPON",
+   "name": "Ninja Blade",
+   "stringId": "",
+   "purpose": "Troop weapon",
+   "verified": false
+  },
+  {
+   "id": "wpn_wakizashi",
+   "kind": "vanilla-ref",
+   "target": "WEAPON",
+   "name": "Wakizashi",
+   "stringId": "",
+   "purpose": "Troop weapon",
+   "verified": false
+  },
+  {
+   "id": "wpn_hacker",
+   "kind": "vanilla-ref",
+   "target": "WEAPON",
+   "name": "Iron Club",
+   "stringId": "",
+   "purpose": "Troop weapon",
+   "verified": false
+  },
+  {
+   "id": "wpn_desert_sabre",
+   "kind": "vanilla-ref",
+   "target": "WEAPON",
+   "name": "Desert Sabre",
+   "stringId": "",
+   "purpose": "Troop weapon",
+   "verified": false
+  },
+  {
+   "id": "wpn_horse_chopper",
+   "kind": "vanilla-ref",
+   "target": "WEAPON",
+   "name": "Horse Chopper",
+   "stringId": "",
+   "purpose": "Troop weapon",
+   "verified": false
+  },
+  {
+   "id": "wpn_crossbow_toothpick",
+   "kind": "vanilla-ref",
+   "target": "WEAPON",
+   "name": "Toothpick crossbow",
+   "stringId": "",
+   "purpose": "Troop weapon",
+   "verified": false
+  },
+  {
+   "id": "arm_holy_plate",
+   "kind": "vanilla-ref",
+   "target": "ARMOUR",
+   "name": "Holy Sentinel plate",
+   "stringId": "",
+   "purpose": "Troop armour",
+   "verified": false
+  },
+  {
+   "id": "arm_samurai",
+   "kind": "vanilla-ref",
+   "target": "ARMOUR",
+   "name": "Samurai armour",
+   "stringId": "",
+   "purpose": "Troop armour",
+   "verified": false
+  },
+  {
+   "id": "arm_shek_plate",
+   "kind": "vanilla-ref",
+   "target": "ARMOUR",
+   "name": "Shek armour",
+   "stringId": "",
+   "purpose": "Troop armour",
+   "verified": false
+  },
+  {
+   "id": "arm_ninja_rags",
+   "kind": "vanilla-ref",
+   "target": "ARMOUR",
+   "name": "Ninja rags",
+   "stringId": "",
+   "purpose": "Troop armour",
+   "verified": false
+  },
+  {
+   "id": "arm_leather_shirt",
+   "kind": "vanilla-ref",
+   "target": "ARMOUR",
+   "name": "Leather shirt",
+   "stringId": "",
+   "purpose": "Troop armour",
+   "verified": false
+  },
+  {
+   "id": "arm_hive_garb",
+   "kind": "vanilla-ref",
+   "target": "ARMOUR",
+   "name": "Hive garb",
+   "stringId": "",
+   "purpose": "Troop armour",
+   "verified": false
+  },
+  {
+   "id": "arm_rag_shirt",
+   "kind": "vanilla-ref",
+   "target": "ARMOUR",
+   "name": "Rag shirt",
+   "stringId": "",
+   "purpose": "Troop armour",
+   "verified": false
+  },
+  {
+   "id": "arm_chainmail",
+   "kind": "vanilla-ref",
+   "target": "ARMOUR",
+   "name": "Chainmail sheet",
+   "stringId": "",
+   "purpose": "Troop armour",
+   "verified": false
+  },
+  {
+   "id": "arm_mercenary_leather",
+   "kind": "vanilla-ref",
+   "target": "ARMOUR",
+   "name": "Mercenary leather",
+   "stringId": "",
+   "purpose": "Troop armour",
+   "verified": false
+  },
+  {
+   "id": "kl_daily_tick",
+   "kind": "kenshilib",
+   "target": "FUNCTION",
+   "name": "GameWorld update / in-game day change",
+   "stringId": "",
+   "purpose": "Run politics once per in-game day (influence decay, votes, fief income)",
+   "verified": false
+  },
+  {
+   "id": "kl_faction_relations",
+   "kind": "kenshilib",
+   "target": "FUNCTION",
+   "name": "Faction relation get/set",
+   "stringId": "",
+   "purpose": "Read standing for the ladder; apply war/peace votes",
+   "verified": false
+  },
+  {
+   "id": "kl_player_money",
+   "kind": "kenshilib",
+   "target": "FUNCTION",
+   "name": "Player faction money",
+   "stringId": "",
+   "purpose": "Pay fief income and wages",
+   "verified": false
+  },
+  {
+   "id": "kl_character_death",
+   "kind": "kenshilib",
+   "target": "FUNCTION",
+   "name": "Character death/KO/imprison event",
+   "stringId": "",
+   "purpose": "Lord captured/killed: renown, influence, defection checks",
+   "verified": false
+  },
+  {
+   "id": "kl_dialog_flag",
+   "kind": "kenshilib",
+   "target": "FUNCTION",
+   "name": "Dialogue condition / event bridge",
+   "stringId": "",
+   "purpose": "Let FCS dialogue ask the plugin (renown, vote outcome) and fire plugin events",
+   "verified": false
+  },
+  {
+   "id": "kl_savegame",
+   "kind": "kenshilib",
+   "target": "FUNCTION",
+   "name": "Save/load hook",
+   "stringId": "",
+   "purpose": "Persist renown, influence and fief holders in the save",
+   "verified": false
+  },
+  {
+   "id": "site_holy_nation_fief_1",
+   "kind": "new",
+   "target": "TOWN (player-outpost plot)",
+   "name": "Ember Field",
+   "stringId": "new",
+   "purpose": "Empty fief plot in holy_nation land; granted by the vassal oath, built with Kenshi's outpost system",
+   "verified": true
+  },
+  {
+   "id": "site_holy_nation_fief_2",
+   "kind": "new",
+   "target": "TOWN (player-outpost plot)",
+   "name": "Psalm Ridge",
+   "stringId": "new",
+   "purpose": "Empty fief plot in holy_nation land; granted by the vassal oath, built with Kenshi's outpost system",
+   "verified": true
+  },
+  {
+   "id": "site_united_cities_fief_1",
+   "kind": "new",
+   "target": "TOWN (player-outpost plot)",
+   "name": "Silkwater Estate",
+   "stringId": "new",
+   "purpose": "Empty fief plot in united_cities land; granted by the vassal oath, built with Kenshi's outpost system",
+   "verified": true
+  },
+  {
+   "id": "site_united_cities_fief_2",
+   "kind": "new",
+   "target": "TOWN (player-outpost plot)",
+   "name": "Copper Terrace",
+   "stringId": "new",
+   "purpose": "Empty fief plot in united_cities land; granted by the vassal oath, built with Kenshi's outpost system",
+   "verified": true
+  },
+  {
+   "id": "site_shek_fief_1",
+   "kind": "new",
+   "target": "TOWN (player-outpost plot)",
+   "name": "Horn Rock",
+   "stringId": "new",
+   "purpose": "Empty fief plot in shek land; granted by the vassal oath, built with Kenshi's outpost system",
+   "verified": true
+  },
+  {
+   "id": "site_shek_fief_2",
+   "kind": "new",
+   "target": "TOWN (player-outpost plot)",
+   "name": "Bonepit Hollow",
+   "stringId": "new",
+   "purpose": "Empty fief plot in shek land; granted by the vassal oath, built with Kenshi's outpost system",
+   "verified": true
+  },
+  {
+   "id": "site_free_realm_fief_1",
+   "kind": "new",
+   "target": "TOWN (player-outpost plot)",
+   "name": "Broken Chain Hold",
+   "stringId": "new",
+   "purpose": "Empty fief plot in free_realm land; granted by the vassal oath, built with Kenshi's outpost system",
+   "verified": true
+  },
+  {
+   "id": "site_free_realm_fief_2",
+   "kind": "new",
+   "target": "TOWN (player-outpost plot)",
+   "name": "Spring Gate",
+   "stringId": "new",
+   "purpose": "Empty fief plot in free_realm land; granted by the vassal oath, built with Kenshi's outpost system",
+   "verified": true
+  },
+  {
+   "id": "site_western_hive_fief_1",
+   "kind": "new",
+   "target": "TOWN (player-outpost plot)",
+   "name": "Brood Glade",
+   "stringId": "new",
+   "purpose": "Empty fief plot in western_hive land; granted by the vassal oath, built with Kenshi's outpost system",
+   "verified": true
+  },
+  {
+   "id": "site_western_hive_fief_2",
+   "kind": "new",
+   "target": "TOWN (player-outpost plot)",
+   "name": "Drone Hollow",
+   "stringId": "new",
+   "purpose": "Empty fief plot in western_hive land; granted by the vassal oath, built with Kenshi's outpost system",
+   "verified": true
+  },
+  {
+   "id": "site_deadcat_fief_1",
+   "kind": "new",
+   "target": "TOWN (player-outpost plot)",
+   "name": "Saltmarsh Landing",
+   "stringId": "new",
+   "purpose": "Empty fief plot in deadcat land; granted by the vassal oath, built with Kenshi's outpost system",
+   "verified": true
+  },
+  {
+   "id": "site_deadcat_fief_2",
+   "kind": "new",
+   "target": "TOWN (player-outpost plot)",
+   "name": "Driftwood Watch",
+   "stringId": "new",
+   "purpose": "Empty fief plot in deadcat land; granted by the vassal oath, built with Kenshi's outpost system",
+   "verified": true
+  },
+  {
+   "id": "start_char_player",
+   "kind": "new",
+   "target": "CHARACTER",
+   "name": "Player character",
+   "stringId": "new",
+   "purpose": "Starting squad member",
+   "verified": true
+  },
+  {
+   "id": "start_char_cellmate_a",
+   "kind": "new",
+   "target": "CHARACTER",
+   "name": "Cellmate: Rusk",
+   "stringId": "new",
+   "purpose": "Starting squad member",
+   "verified": true
+  },
+  {
+   "id": "start_char_cellmate_b",
+   "kind": "new",
+   "target": "CHARACTER",
+   "name": "Cellmate: Hollow Tam",
+   "stringId": "new",
+   "purpose": "Starting squad member",
+   "verified": true
+  },
+  {
+   "id": "start_char_hound_a",
+   "kind": "new",
+   "target": "CHARACTER",
+   "name": "Ashen Hound: Sergeant Vey",
+   "stringId": "new",
+   "purpose": "Starting squad member",
+   "verified": true
+  },
+  {
+   "id": "start_char_hound_b",
+   "kind": "new",
+   "target": "CHARACTER",
+   "name": "Ashen Hound: Bolt",
+   "stringId": "new",
+   "purpose": "Starting squad member",
+   "verified": true
+  },
+  {
+   "id": "npc_recruiter_holy_nation",
+   "kind": "new",
+   "target": "CHARACTER",
+   "name": "Recruiter of holy_nation",
+   "stringId": "new",
+   "purpose": "Drinks in the Hub; offers 'The Last Contract' employment",
+   "verified": true
+  },
+  {
+   "id": "npc_recruiter_united_cities",
+   "kind": "new",
+   "target": "CHARACTER",
+   "name": "Recruiter of united_cities",
+   "stringId": "new",
+   "purpose": "Drinks in the Hub; offers 'The Last Contract' employment",
+   "verified": true
+  },
+  {
+   "id": "npc_recruiter_shek",
+   "kind": "new",
+   "target": "CHARACTER",
+   "name": "Recruiter of shek",
+   "stringId": "new",
+   "purpose": "Drinks in the Hub; offers 'The Last Contract' employment",
+   "verified": true
+  },
+  {
+   "id": "npc_recruiter_free_realm",
+   "kind": "new",
+   "target": "CHARACTER",
+   "name": "Recruiter of free_realm",
+   "stringId": "new",
+   "purpose": "Drinks in the Hub; offers 'The Last Contract' employment",
+   "verified": true
+  },
+  {
+   "id": "npc_recruiter_western_hive",
+   "kind": "new",
+   "target": "CHARACTER",
+   "name": "Recruiter of western_hive",
+   "stringId": "new",
+   "purpose": "Drinks in the Hub; offers 'The Last Contract' employment",
+   "verified": true
+  },
+  {
+   "id": "npc_recruiter_deadcat",
+   "kind": "new",
+   "target": "CHARACTER",
+   "name": "Recruiter of deadcat",
+   "stringId": "new",
+   "purpose": "Drinks in the Hub; offers 'The Last Contract' employment",
+   "verified": true
+  },
+  {
+   "id": "dlg_merc_contract",
+   "kind": "new",
+   "target": "DIALOGUE",
+   "name": "Mercenary contract",
+   "stringId": "new",
+   "purpose": "Lord offers a contract when ladder 'mercenary' is met",
+   "verified": true
+  },
+  {
+   "id": "dlg_vassal_oath",
+   "kind": "new",
+   "target": "DIALOGUE",
+   "name": "Vassal oath",
+   "stringId": "new",
+   "purpose": "Ruler offers the oath and a fief when ladder 'vassal' is met",
+   "verified": true
+  }
+ ]
+}
