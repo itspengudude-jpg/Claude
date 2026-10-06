@@ -1,0 +1,10 @@
+{
+  "_about": "Arena hazards. One row = one hazard script/scene. Damage is % of max health per second (or per hit).",
+  "columns": ["id","name","arena","trigger","interval","duration","damagePct","area","telegraph","vfx","verified"],
+  "rows": [
+    {"id":"hz_rad_storm","name":"Radiation Storm","arena":"arena_scrapyard","trigger":"timer","interval":30,"duration":8,"damagePct":3,"area":"half the arena, side picked at random","telegraph":"Green haze rolls in 2 s before it hurts","vfx":"fx_rad_glow","verified":false},
+    {"id":"hz_rad_barrel","name":"Leaking Barrel","arena":"arena_scrapyard","trigger":"on hit","interval":0,"duration":6,"damagePct":4,"area":"small puddle around a hit barrel","telegraph":"Barrel cracks and drips","vfx":"fx_rad_glow","verified":false},
+    {"id":"hz_vault_turret","name":"Security Turret","arena":"arena_vault","trigger":"timer","interval":20,"duration":4,"damagePct":5,"area":"sweeping cone from the north wall","telegraph":"Red laser sight sweeps first","vfx":"fx_turret_flash","verified":false},
+    {"id":"hz_vault_door","name":"Cog Door","arena":"arena_vault","trigger":"timer","interval":45,"duration":10,"damagePct":0,"area":"opens a shortcut through the center wall","telegraph":"Alarm light and siren","vfx":"","verified":false}
+  ]
+}

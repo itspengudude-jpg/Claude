@@ -1,0 +1,10 @@
+{
+  "_about": "Wasteland league rival clubs. One row = one club resource. Roster entries are rows in rivals.json.",
+  "columns": ["id","name","strength","roster","homeArena","colors","verified"],
+  "rows": [
+    {"id":"club_rust_raiders","name":"Rust Raiders","strength":1,"roster":["rv_raider_1","rv_raider_2","rv_raider_3"],"homeArena":"arena_scrapyard","colors":["#8b4513","#d2691e"],"verified":false},
+    {"id":"club_glow_ghouls","name":"Glowing Ones","strength":2,"roster":["rv_ghoul_1","rv_ghoul_2","rv_ghoul_3"],"homeArena":"arena_scrapyard","colors":["#3cb371","#adff2f"],"verified":false},
+    {"id":"club_steel_order","name":"Order of Steel","strength":3,"roster":["rv_steel_1","rv_steel_2","rv_steel_3"],"homeArena":"arena_vault","colors":["#708090","#c0c0c0"],"verified":false},
+    {"id":"club_vault_dwellers","name":"Vault 77 Overseers","strength":4,"roster":["rv_vault_1","rv_vault_2","rv_vault_3"],"homeArena":"arena_vault","colors":["#1e3a8a","#facc15"],"verified":false}
+  ]
+}

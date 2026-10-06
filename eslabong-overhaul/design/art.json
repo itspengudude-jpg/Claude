@@ -1,0 +1,25 @@
+{
+  "_about": "Art pieces. One row = one image or sprite set. source: 'drawn' = drawn in code by tools over the game's base sprite; 'cc0'/'cc-by' = free library asset (license + author + url required). Base sprite and frame size come from the game.",
+  "columns": ["id","kind","source","baseSprite","frameSize","palette","license","author","url","outPath","verified"],
+  "rows": [
+    {"id":"art_iron_scavenger","kind":"fighter overlay","source":"drawn","baseSprite":"","frameSize":"","palette":["#5b5f63","#9aa0a6","#c8a24a"],"license":"own","author":"mod","url":"","outPath":"","verified":false},
+    {"id":"art_rad_brawler","kind":"fighter overlay","source":"drawn","baseSprite":"","frameSize":"","palette":["#4a3b2a","#7fd14a","#2e2e2e"],"license":"own","author":"mod","url":"","outPath":"","verified":false},
+    {"id":"art_pip_gunner","kind":"fighter overlay","source":"drawn","baseSprite":"","frameSize":"","palette":["#2b4c7e","#f2c94c","#3a3a3a"],"license":"own","author":"mod","url":"","outPath":"","verified":false},
+    {"id":"art_ghoul_medic","kind":"fighter overlay","source":"drawn","baseSprite":"","frameSize":"","palette":["#8a7a5c","#e0e0e0","#c0392b"],"license":"own","author":"mod","url":"","outPath":"","verified":false},
+    {"id":"art_super_brute","kind":"fighter overlay","source":"drawn","baseSprite":"","frameSize":"","palette":["#6b8e23","#556b2f","#3b3b3b"],"license":"own","author":"mod","url":"","outPath":"","verified":false},
+    {"id":"art_laser_ranger","kind":"fighter overlay","source":"drawn","baseSprite":"","frameSize":"","palette":["#3d3d3d","#c0392b","#ff6b6b"],"license":"own","author":"mod","url":"","outPath":"","verified":false},
+    {"id":"fx_armor_break","kind":"vfx","source":"drawn","baseSprite":"none","frameSize":"","palette":["#9aa0a6","#ffffff"],"license":"own","author":"mod","url":"","outPath":"","verified":false},
+    {"id":"fx_rad_glow","kind":"vfx","source":"drawn","baseSprite":"none","frameSize":"","palette":["#7fd14a","#c6ff7a"],"license":"own","author":"mod","url":"","outPath":"","verified":false},
+    {"id":"fx_vats_overlay","kind":"vfx","source":"drawn","baseSprite":"none","frameSize":"","palette":["#39ff14","#0b3d0b"],"license":"own","author":"mod","url":"","outPath":"","verified":false},
+    {"id":"fx_stim_splash","kind":"vfx","source":"drawn","baseSprite":"none","frameSize":"","palette":["#ff4d4d","#ffffff"],"license":"own","author":"mod","url":"","outPath":"","verified":false},
+    {"id":"fx_slam_dust","kind":"vfx","source":"drawn","baseSprite":"none","frameSize":"","palette":["#a08a6a","#d8c8a8"],"license":"own","author":"mod","url":"","outPath":"","verified":false},
+    {"id":"fx_laser_beam","kind":"vfx","source":"drawn","baseSprite":"none","frameSize":"","palette":["#ff2a2a","#ffd0d0"],"license":"own","author":"mod","url":"","outPath":"","verified":false},
+    {"id":"fx_turret_flash","kind":"vfx","source":"drawn","baseSprite":"none","frameSize":"","palette":["#ff3b3b","#ffe08a"],"license":"own","author":"mod","url":"","outPath":"","verified":false},
+    {"id":"prop_car_wreck","kind":"prop","source":"cc0","baseSprite":"none","frameSize":"","palette":[],"license":"","author":"","url":"","outPath":"","verified":false},
+    {"id":"prop_scrap_pile","kind":"prop","source":"cc0","baseSprite":"none","frameSize":"","palette":[],"license":"","author":"","url":"","outPath":"","verified":false},
+    {"id":"prop_rad_barrel","kind":"prop","source":"drawn","baseSprite":"none","frameSize":"","palette":["#d4b106","#2e2e2e","#7fd14a"],"license":"own","author":"mod","url":"","outPath":"","verified":false},
+    {"id":"prop_vault_door","kind":"prop","source":"drawn","baseSprite":"none","frameSize":"","palette":["#9aa0a6","#facc15","#1e3a8a"],"license":"own","author":"mod","url":"","outPath":"","verified":false},
+    {"id":"prop_terminal","kind":"prop","source":"cc0","baseSprite":"none","frameSize":"","palette":[],"license":"","author":"","url":"","outPath":"","verified":false},
+    {"id":"prop_debris","kind":"prop","source":"cc0","baseSprite":"none","frameSize":"","palette":[],"license":"","author":"","url":"","outPath":"","verified":false}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "_about": "Every place the mod touches Eslabong. One row = one game system/file the mod hooks or overrides. 'resPath' and 'method' come from the recovered project (GDRE Tools) and stay unverified until read. No game files are shipped; the mod pck only adds files or extends scripts.",
+  "columns": ["id","system","purpose","resPath","method","route","verified"],
+  "rows": [
+    {"id":"hook_bootstrap","system":"startup","purpose":"Load the mod pck and register mod content before the main menu","resPath":"override.cfg","method":"autoload","route":"override.cfg autoload -> ProjectSettings.load_resource_pack","verified":false},
+    {"id":"hook_class_registry","system":"classes","purpose":"Add the 6 Wasteland classes to the game's class list","resPath":"","method":"","route":"","verified":false},
+    {"id":"hook_ability_system","system":"abilities","purpose":"Run the mod's ability scripts through the game's ability/cooldown system","resPath":"","method":"","route":"","verified":false},
+    {"id":"hook_market","system":"market","purpose":"Offer Wasteland classes in the merc market","resPath":"","method":"","route":"","verified":false},
+    {"id":"hook_league","system":"leagues","purpose":"Add the Wasteland league as a selectable league with its rival clubs","resPath":"","method":"","route":"","verified":false},
+    {"id":"hook_arena_select","system":"arenas","purpose":"Load Wasteland arenas for Wasteland league matches","resPath":"","method":"","route":"","verified":false},
+    {"id":"hook_economy","system":"economy","purpose":"Rename gold to Caps and scale prizes in the Wasteland league","resPath":"","method":"","route":"","verified":false},
+    {"id":"hook_save","system":"saves","purpose":"Keep saves loadable if the mod is removed (mod data stored separately)","resPath":"","method":"","route":"","verified":false}
+  ]
+}

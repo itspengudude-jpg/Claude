@@ -1,0 +1,11 @@
+{
+  "_about": "Wasteland league rules. One row = one rule switch applied while the Wasteland league is active. 'hook' names the game system it changes (rows in hooks.json).",
+  "columns": ["id","name","description","value","hook","verified"],
+  "rows": [
+    {"id":"rule_clubs","name":"Clubs","description":"Player club plus the four Wasteland rivals","value":["club_rust_raiders","club_glow_ghouls","club_steel_order","club_vault_dwellers"],"hook":"hook_league","verified":false},
+    {"id":"rule_arenas","name":"Arena rotation","description":"Matches alternate between the two Wasteland arenas","value":["arena_scrapyard","arena_vault"],"hook":"hook_arena_select","verified":false},
+    {"id":"rule_market","name":"Wasteland market","description":"Only Wasteland classes appear in the market","value":["cls_iron_scavenger","cls_rad_brawler","cls_pip_gunner","cls_ghoul_medic","cls_super_brute","cls_laser_ranger"],"hook":"hook_market","verified":false},
+    {"id":"rule_caps","name":"Caps economy","description":"Gold is shown as Caps; match prize x1.2 to offset hazard injuries","value":1.2,"hook":"hook_economy","verified":false},
+    {"id":"rule_storm_season","name":"Storm season","description":"From the second half of the season, radiation storms come every 20 s instead of 30","value":20,"hook":"hook_arena_select","verified":false}
+  ]
+}

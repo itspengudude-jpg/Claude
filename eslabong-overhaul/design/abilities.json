@@ -1,0 +1,13 @@
+{
+  "_about": "Abilities. One row = one ability script/resource. 'mechanic' names the existing Eslabong mechanic it is built on (found by reading the game); 'new' means new code. Cooldown in seconds; power is relative to the base class's normal attack.",
+  "columns": ["id","name","owner","kind","mechanic","cooldown","power","radius","duration","effect","vfx","verified"],
+  "rows": [
+    {"id":"ab_power_armor","name":"Power Armor","owner":"cls_iron_scavenger","kind":"passive","mechanic":"","cooldown":0,"power":0,"radius":0,"duration":0,"effect":"Absorbs the first 3 hits each round, then the armor breaks (sprite swaps to unarmored).","vfx":"fx_armor_break","verified":false},
+    {"id":"ab_rad_feed","name":"Rad Feed","owner":"cls_rad_brawler","kind":"passive","mechanic":"","cooldown":0,"power":1.25,"radius":0,"duration":0,"effect":"Heals 5% max health per second inside radiation and deals x1.25 damage while irradiated.","vfx":"fx_rad_glow","verified":false},
+    {"id":"ab_vats_shot","name":"V.A.T.S. Shot","owner":"cls_pip_gunner","kind":"active","mechanic":"","cooldown":10,"power":2.5,"radius":0,"duration":1.5,"effect":"Time slows for 1.5 s, then a locked-on shot hits the targeted enemy for x2.5 damage.","vfx":"fx_vats_overlay","verified":false},
+    {"id":"ab_stim_toss","name":"Stim Toss","owner":"cls_ghoul_medic","kind":"active","mechanic":"","cooldown":8,"power":0.3,"radius":1.5,"duration":0,"effect":"Throws a stimpak that heals allies in the splash radius for 30% max health.","vfx":"fx_stim_splash","verified":false},
+    {"id":"ab_rad_immune","name":"Ghoulified","owner":"cls_ghoul_medic","kind":"passive","mechanic":"","cooldown":0,"power":0,"radius":0,"duration":0,"effect":"Takes no damage from radiation hazards.","vfx":"","verified":false},
+    {"id":"ab_ground_slam","name":"Ground Slam","owner":"cls_super_brute","kind":"active","mechanic":"","cooldown":12,"power":1.5,"radius":2.5,"duration":1.2,"effect":"Slams the ground: x1.5 damage and a 1.2 s stun to enemies in the radius.","vfx":"fx_slam_dust","verified":false},
+    {"id":"ab_piercing_beam","name":"Piercing Beam","owner":"cls_laser_ranger","kind":"active","mechanic":"","cooldown":9,"power":2.0,"radius":0,"duration":0.8,"effect":"Charges for 0.8 s, then fires a beam that passes through every enemy in a line for x2.0 damage.","vfx":"fx_laser_beam","verified":false}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "_about": "Rival fighters. One row = one fighter on a rival club, using a Wasteland class.",
+  "columns": ["id","club","name","class","level"],
+  "rows": [
+    {"id":"rv_raider_1","club":"club_rust_raiders","name":"Scrap Jaw","class":"cls_rad_brawler","level":1},
+    {"id":"rv_raider_2","club":"club_rust_raiders","name":"Tinny","class":"cls_iron_scavenger","level":1},
+    {"id":"rv_raider_3","club":"club_rust_raiders","name":"Boomstick Bea","class":"cls_pip_gunner","level":1},
+    {"id":"rv_ghoul_1","club":"club_glow_ghouls","name":"Old Glow","class":"cls_ghoul_medic","level":2},
+    {"id":"rv_ghoul_2","club":"club_glow_ghouls","name":"Hotspot","class":"cls_rad_brawler","level":2},
+    {"id":"rv_ghoul_3","club":"club_glow_ghouls","name":"Flicker","class":"cls_rad_brawler","level":2},
+    {"id":"rv_steel_1","club":"club_steel_order","name":"Paladin Varn","class":"cls_iron_scavenger","level":3},
+    {"id":"rv_steel_2","club":"club_steel_order","name":"Scribe Ilsa","class":"cls_laser_ranger","level":3},
+    {"id":"rv_steel_3","club":"club_steel_order","name":"Knight Corso","class":"cls_iron_scavenger","level":3},
+    {"id":"rv_vault_1","club":"club_vault_dwellers","name":"Overseer Hale","class":"cls_laser_ranger","level":4},
+    {"id":"rv_vault_2","club":"club_vault_dwellers","name":"Big Lou","class":"cls_super_brute","level":4},
+    {"id":"rv_vault_3","club":"club_vault_dwellers","name":"Doc Ames","class":"cls_ghoul_medic","level":4}
+  ]
+}

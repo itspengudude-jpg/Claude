@@ -1,0 +1,12 @@
+{
+  "_about": "Wasteland classes. One row = one new fighter class (generates one class resource + ability list). Stats are multipliers on the game class named in baseClass, so they stay valid whatever Eslabong's raw numbers are. baseClass/resPath come from reading the game and stay unverified until then.",
+  "columns": ["id","name","pack","role","baseClass","healthMult","speedMult","damageMult","range","abilities","art","marketPrice","resPath","verified"],
+  "rows": [
+    {"id":"cls_iron_scavenger","name":"Iron Scavenger","pack":"wasteland","role":"Tank","baseClass":"","healthMult":1.4,"speedMult":0.8,"damageMult":1.0,"range":"melee","abilities":["ab_power_armor"],"art":"art_iron_scavenger","marketPrice":"","resPath":"","verified":false},
+    {"id":"cls_rad_brawler","name":"Rad Brawler","pack":"wasteland","role":"Bruiser","baseClass":"","healthMult":1.1,"speedMult":1.0,"damageMult":1.15,"range":"melee","abilities":["ab_rad_feed"],"art":"art_rad_brawler","marketPrice":"","resPath":"","verified":false},
+    {"id":"cls_pip_gunner","name":"Pip-Gunner","pack":"wasteland","role":"Marksman","baseClass":"","healthMult":0.85,"speedMult":1.0,"damageMult":1.1,"range":"ranged","abilities":["ab_vats_shot"],"art":"art_pip_gunner","marketPrice":"","resPath":"","verified":false},
+    {"id":"cls_ghoul_medic","name":"Ghoul Medic","pack":"wasteland","role":"Support","baseClass":"","healthMult":0.9,"speedMult":1.05,"damageMult":0.8,"range":"ranged","abilities":["ab_stim_toss","ab_rad_immune"],"art":"art_ghoul_medic","marketPrice":"","resPath":"","verified":false},
+    {"id":"cls_super_brute","name":"Super-Brute","pack":"wasteland","role":"Heavy","baseClass":"","healthMult":1.7,"speedMult":0.7,"damageMult":1.3,"range":"melee","abilities":["ab_ground_slam"],"art":"art_super_brute","marketPrice":"","resPath":"","verified":false},
+    {"id":"cls_laser_ranger","name":"Laser Ranger","pack":"wasteland","role":"Sniper","baseClass":"","healthMult":0.8,"speedMult":0.95,"damageMult":1.2,"range":"ranged","abilities":["ab_piercing_beam"],"art":"art_laser_ranger","marketPrice":"","resPath":"","verified":false}
+  ]
+}

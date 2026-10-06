@@ -1,0 +1,8 @@
+{
+  "_about": "Arenas. One row = one arena scene. baseArena = the existing Eslabong arena scene it is built from (layout/collision reused).",
+  "columns": ["id","name","pack","baseArena","hazards","props","music","scenePath","verified"],
+  "rows": [
+    {"id":"arena_scrapyard","name":"Rustbelt Scrapyard","pack":"wasteland","baseArena":"","hazards":["hz_rad_storm","hz_rad_barrel"],"props":["prop_car_wreck","prop_scrap_pile","prop_rad_barrel"],"music":"","scenePath":"","verified":false},
+    {"id":"arena_vault","name":"Vault 77 Atrium","pack":"wasteland","baseArena":"","hazards":["hz_vault_turret","hz_vault_door"],"props":["prop_vault_door","prop_terminal","prop_debris"],"music":"","scenePath":"","verified":false}
+  ]
+}
