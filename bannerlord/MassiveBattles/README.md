@@ -17,6 +17,9 @@ Status: **compiles, not yet tested in game.**
 ## Install
 1. Copy `Modules/MassiveBattles` from the release zip into
    `...\steamapps\common\Mount & Blade II Bannerlord\Modules\`.
+   Windows marks downloaded DLLs as "from the internet" and Bannerlord then refuses to load them
+   (`rgl_log`: *"load an assembly from a network location"*, HRESULT 0x80131515). Unblock once in PowerShell:
+   `Get-ChildItem "<Bannerlord>\Modules\MassiveBattles" -Recurse | Unblock-File`
 2. In the launcher, enable **Massive Battles** and place it **after ROT-Dragon** (last in the list).
 3. Required: Harmony, ButterLib, UIExtenderEx, Mod Configuration Menu v5 (all already in a normal RoT setup).
 
