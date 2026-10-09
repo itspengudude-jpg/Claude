@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+  <Id value="MassiveBattles"/>
+  <Name value="Massive Battles"/>
+  <Version value="v0.1.0"/>
+  <DefaultModule value="false"/>
+  <ModuleCategory value="Singleplayer"/>
+  <ModuleType value="Community"/>
+  <Url value=""/>
+  <DependedModules>
+    <DependedModule Id="Bannerlord.Harmony" DependentVersion="v2.4.2" Optional="false"/>
+    <DependedModule Id="Bannerlord.UIExtenderEx" DependentVersion="v3.0.3" Optional="false"/>
+    <DependedModule Id="Bannerlord.MBOptionScreen" DependentVersion="v5.12.3" Optional="false"/>
+    <DependedModule Id="Native" DependentVersion="v1.5.5" Optional="false"/>
+    <DependedModule Id="SandBoxCore" DependentVersion="v1.5.5" Optional="false"/>
+    <DependedModule Id="Sandbox" DependentVersion="v1.5.5" Optional="false"/>
+  </DependedModules>
+  <!-- Load after Realm of Thrones so our battle-size patches have the last word. -->
+  <DependedModuleMetadatas>
+    <DependedModuleMetadata id="Bannerlord.Harmony" order="LoadBeforeThis"/>
+    <DependedModuleMetadata id="Bannerlord.UIExtenderEx" order="LoadBeforeThis"/>
+    <DependedModuleMetadata id="Bannerlord.MBOptionScreen" order="LoadBeforeThis"/>
+    <DependedModuleMetadata id="Native" order="LoadBeforeThis"/>
+    <DependedModuleMetadata id="SandBoxCore" order="LoadBeforeThis"/>
+    <DependedModuleMetadata id="Sandbox" order="LoadBeforeThis"/>
+    <DependedModuleMetadata id="ROT-Core" order="LoadBeforeThis" optional="true"/>
+    <DependedModuleMetadata id="ROT-Content" order="LoadBeforeThis" optional="true"/>
+    <DependedModuleMetadata id="ROT-Map" order="LoadBeforeThis" optional="true"/>
+    <DependedModuleMetadata id="ROT-Dragon" order="LoadBeforeThis" optional="true"/>
+  </DependedModuleMetadatas>
+  <SubModules>
+    <SubModule>
+      <Name value="MassiveBattles"/>
+      <DLLName value="MassiveBattles.dll"/>
+      <SubModuleClassType value="MassiveBattles.SubModule"/>
+      <Tags/>
+    </SubModule>
+  </SubModules>
+  <Xmls/>
+</Module>

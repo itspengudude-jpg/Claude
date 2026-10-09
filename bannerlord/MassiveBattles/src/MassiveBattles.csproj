@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>10.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <AssemblyName>MassiveBattles</AssemblyName>
+    <RootNamespace>MassiveBattles</RootNamespace>
+    <Version>0.1.0</Version>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GameVersion>1.5.4.123627-beta</GameVersion>
+    <!-- Ready-to-copy module folder: dist/Modules/MassiveBattles -->
+    <ModuleOutDir>$(MSBuildThisFileDirectory)..\dist\Modules\MassiveBattles\</ModuleOutDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Compile-only references; the game, Harmony and MCM modules supply the real DLLs at runtime. -->
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <PackageReference Include="Bannerlord.ReferenceAssemblies.Core" Version="$(GameVersion)" PrivateAssets="all" IncludeAssets="compile" />
+    <PackageReference Include="Lib.Harmony" Version="2.4.2" PrivateAssets="all" IncludeAssets="compile" />
+    <PackageReference Include="Bannerlord.MCM" Version="5.12.3" PrivateAssets="all" IncludeAssets="compile" />
+  </ItemGroup>
+
+  <Target Name="PackageModule" AfterTargets="Build">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)..\Module\SubModule.xml" DestinationFolder="$(ModuleOutDir)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModuleOutDir)bin\Win64_Shipping_Client\" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModuleOutDir)bin\Gaming.Desktop.x64_Shipping_Client\" />
+  </Target>
+</Project>
