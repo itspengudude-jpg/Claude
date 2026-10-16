@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-/* Layout: one narrow column, a "fill level" progress band up top, sections of tickable rows grouped by edition type. */
+/* Layout: one narrow column, two "fill level" tallies up top (drunk / collected), sections of rows with two ticks each. */
 :root {
   --bg: #fff8f1;
   --surface: #ffffff;
@@ -14,7 +14,9 @@
   --accent: #f26a0a;
   --accent-soft: #ffe3cc;
   --fizz: #ffb46b;
-  --check: #1f8a4c;
+  --drunk: #f26a0a;
+  --collected: #6a3fc2;
+  --on-fill: #ffffff;
   --tag-zero: #e6eefc; --tag-zero-fg: #2c4f9a;
   --tag-ltd: #f7e4f6; --tag-ltd-fg: #8a2c86;
   --tag-reg: #e5f4ea; --tag-reg-fg: #24683f;
@@ -24,7 +26,8 @@
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #1a120c; --surface: #241912; --fg: #fbeee2; --muted: #b59d89; --line: #3a2a1e;
-  --accent: #ff8a33; --accent-soft: #4a2a12; --fizz: #b85a17; --check: #4cc47f;
+  --accent: #ff8a33; --accent-soft: #4a2a12; --fizz: #b85a17;
+  --drunk: #ff8a33; --collected: #a685f0; --on-fill: #1a120c;
   --tag-zero: #1f2b44; --tag-zero-fg: #a9c2f5;
   --tag-ltd: #3a1f39; --tag-ltd-fg: #eab0e6;
   --tag-reg: #1d3325; --tag-reg-fg: #9fd9b4;
@@ -32,7 +35,8 @@
 } }
 :root[data-theme="dark"] {
   --bg: #1a120c; --surface: #241912; --fg: #fbeee2; --muted: #b59d89; --line: #3a2a1e;
-  --accent: #ff8a33; --accent-soft: #4a2a12; --fizz: #b85a17; --check: #4cc47f;
+  --accent: #ff8a33; --accent-soft: #4a2a12; --fizz: #b85a17;
+  --drunk: #ff8a33; --collected: #a685f0; --on-fill: #1a120c;
   --tag-zero: #1f2b44; --tag-zero-fg: #a9c2f5;
   --tag-ltd: #3a1f39; --tag-ltd-fg: #eab0e6;
   --tag-reg: #1d3325; --tag-reg-fg: #9fd9b4;
@@ -44,7 +48,7 @@ body {
   font-family: var(--font-body); font-size: 15px; line-height: 1.5;
 }
 .wrap {
-  max-width: 760px; margin: 0 auto;
+  max-width: 800px; margin: 0 auto;
   padding-block: 28px 64px;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
@@ -59,27 +63,29 @@ h1 {
 h1 span { color: var(--accent); }
 .lede { margin: 0; color: var(--muted); max-width: 60ch; }
 
-/* Fill-level progress */
+/* Fill-level tallies */
+.levels { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .level {
   position: relative; overflow: hidden; border-radius: 18px;
   background: var(--surface); border: 1.5px solid var(--line);
-  padding: 18px 20px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  padding: 16px 18px; display: grid; gap: 2px;
 }
 .level .liquid {
-  position: absolute; inset: 0 auto 0 0; width: 0%;
-  background: linear-gradient(180deg, var(--fizz), var(--accent));
-  opacity: .22; transition: width .5s ease;
+  position: absolute; inset: auto 0 0 0; height: 0%;
+  background: var(--fill); opacity: .2; transition: height .5s ease;
 }
 .level .liquid::after {
   content: ""; position: absolute; inset: 0;
   background-image: radial-gradient(circle, var(--surface) 1.5px, transparent 2px);
   background-size: 22px 26px; opacity: .55;
 }
+.level.drunk { --fill: var(--drunk); }
+.level.collected { --fill: var(--collected); }
 .level > *:not(.liquid) { position: relative; }
-.count { font-family: var(--font-display); font-weight: 800; font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
+.level .lbl { font: 500 12px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.count { font-family: var(--font-display); font-weight: 800; font-size: 40px; line-height: 1.05; font-variant-numeric: tabular-nums; }
 .count small { font-size: 18px; color: var(--muted); font-weight: 500; }
-.breakdown { display: flex; gap: 14px; flex-wrap: wrap; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
-.breakdown b { color: var(--fg); font-weight: 600; }
+.pct { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
 
 /* Controls */
 .controls { display: grid; gap: 10px; }
@@ -87,47 +93,55 @@ h1 span { color: var(--accent); }
   width: 100%; font: inherit; color: var(--fg); background: var(--surface);
   border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 14px;
 }
-.search:focus-visible, button:focus-visible, input[type=checkbox]:focus-visible + .box { outline: 2px solid var(--accent); outline-offset: 2px; }
+.search:focus-visible, button:focus-visible, form.add input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .chips { display: flex; gap: 8px; flex-wrap: wrap; }
 .chip {
   font: 600 13px var(--font-body); color: var(--fg); background: transparent;
   border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer;
 }
-.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.chip[aria-pressed="true"] { background: var(--fg); border-color: var(--fg); color: var(--bg); }
 .chip:hover { border-color: var(--accent); }
 
 /* Sections */
 section { display: grid; gap: 8px; }
 section h2 {
   font-family: var(--font-display); font-weight: 800; font-size: 22px; margin: 6px 0 0;
-  display: flex; align-items: baseline; gap: 10px;
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
 }
-section h2 .n { font: 500 13px var(--font-mono); color: var(--muted); }
+section h2 .n { font: 500 12.5px var(--font-mono); color: var(--muted); }
 section .blurb { margin: 0 0 4px; color: var(--muted); font-size: 13.5px; max-width: 62ch; }
 ul.list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-li.row { border-bottom: 1px solid var(--line); }
-li.row label {
-  display: grid; grid-template-columns: 26px 1fr auto; gap: 12px; align-items: start;
-  padding: 11px 4px; cursor: pointer;
+li.row {
+  border-bottom: 1px solid var(--line);
+  display: grid; grid-template-columns: 1fr auto; gap: 6px 14px; align-items: center;
+  padding: 10px 2px;
 }
-li.row input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-.box {
-  width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--muted);
-  display: grid; place-items: center; margin-top: 1px; transition: background .15s, border-color .15s;
-}
-.box svg { width: 13px; height: 13px; opacity: 0; transition: opacity .15s; }
-input:checked + .box { background: var(--check); border-color: var(--check); }
-input:checked + .box svg { opacity: 1; }
-.name { font-weight: 600; min-width: 0; }
-.note { display: block; font-weight: 400; font-size: 13px; color: var(--muted); }
-input:checked ~ .name { color: var(--muted); }
-input:checked ~ .name .t { text-decoration: line-through; text-decoration-color: var(--check); text-decoration-thickness: 2px; }
-.meta { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; max-width: 220px; }
+.info { min-width: 0; display: grid; gap: 4px; }
+.name { font-weight: 600; }
+.note { font-size: 13px; color: var(--muted); }
+.meta { display: flex; gap: 6px; flex-wrap: wrap; }
 .tag { font: 500 11.5px var(--font-mono); padding: 2px 7px; border-radius: 6px; background: var(--accent-soft); color: var(--fg); white-space: nowrap; }
 .tag.zero { background: var(--tag-zero); color: var(--tag-zero-fg); }
 .tag.ltd { background: var(--tag-ltd); color: var(--tag-ltd-fg); }
 .tag.reg { background: var(--tag-reg); color: var(--tag-reg-fg); }
-.del { font: 500 12px var(--font-body); color: var(--muted); background: none; border: 0; cursor: pointer; padding: 2px 4px; text-decoration: underline; }
+.del { font: 500 12px var(--font-body); color: var(--muted); background: none; border: 0; cursor: pointer; padding: 0 2px; text-decoration: underline; }
+
+.ticks { display: flex; gap: 6px; }
+.tick {
+  --c: var(--drunk);
+  display: inline-flex; align-items: center; gap: 6px;
+  font: 600 13px var(--font-body); color: var(--fg); background: transparent;
+  border: 1.5px solid var(--line); border-radius: 999px; padding: 5px 11px 5px 7px; cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.tick.collected { --c: var(--collected); }
+.tick .dot { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--c); display: grid; place-items: center; }
+.tick .dot svg { width: 10px; height: 10px; opacity: 0; }
+.tick:hover { border-color: var(--c); }
+.tick[aria-pressed="true"] { background: var(--c); border-color: var(--c); color: var(--on-fill); }
+.tick[aria-pressed="true"] .dot { border-color: var(--on-fill); background: var(--on-fill); }
+.tick[aria-pressed="true"] .dot svg { opacity: 1; }
+.tick .dot svg path { stroke: var(--c); }
 
 /* Add form */
 form.add { display: grid; grid-template-columns: 1fr 1fr auto; gap: 8px; }
@@ -136,10 +150,10 @@ form.add button { font: 600 14px var(--font-body); background: var(--fg); color:
 .empty { color: var(--muted); font-size: 14px; padding: 10px 4px; margin: 0; }
 footer { font-size: 12.5px; color: var(--muted); display: grid; gap: 4px; }
 #status { font-family: var(--font-mono); font-size: 12px; }
-@media (max-width: 520px) {
-  li.row label { grid-template-columns: 26px 1fr; }
-  .meta { grid-column: 2; justify-content: flex-start; max-width: none; }
+@media (max-width: 560px) {
+  li.row { grid-template-columns: 1fr; }
   form.add { grid-template-columns: 1fr; }
+  .count { font-size: 32px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
@@ -148,13 +162,12 @@ footer { font-size: 12.5px; color: var(--muted); display: grid; gap: 4px; }
   <header>
     <p class="eyebrow">Collector's log · cans &amp; bottles</p>
     <h1>Fanta Flavour <span>Checklist</span></h1>
-    <p class="lede">Tick off every Fanta you've tried or collected: the core range, Zero Sugar, regional exclusives, and the limited and special editions. Missing one? Add it at the bottom.</p>
+    <p class="lede">Mark each Fanta as <b>Drunk</b> once you've tasted it and <b>Collected</b> once a can or bottle is on your shelf. Covers the core range, Zero Sugar, regional exclusives, and limited and special editions. Missing one? Add it at the bottom.</p>
   </header>
 
-  <div class="level" aria-live="polite">
-    <div class="liquid" id="liquid"></div>
-    <div class="count" id="count">0<small> / 0</small></div>
-    <div class="breakdown" id="breakdown"></div>
+  <div class="levels" aria-live="polite">
+    <div class="level drunk"><div class="liquid" id="liquid-drunk"></div><span class="lbl">Drunk</span><div class="count" id="count-drunk">0</div><span class="pct" id="pct-drunk"></span></div>
+    <div class="level collected"><div class="liquid" id="liquid-collected"></div><span class="lbl">Collected</span><div class="count" id="count-collected">0</div><span class="pct" id="pct-collected"></span></div>
   </div>
 
   <div class="controls">
@@ -168,7 +181,7 @@ footer { font-size: 12.5px; color: var(--muted); display: grid; gap: 4px; }
     <h2>Add a flavour</h2>
     <p class="blurb">Found one that isn't listed? Add it here and it joins your checklist.</p>
     <form class="add" id="addForm">
-      <input id="addName" placeholder="Flavour name, e.g. Fanta Lychee" required maxlength="80" aria-label="Flavour name">
+      <input id="addName" placeholder="Flavour name, e.g. Fanta Yuzu" required maxlength="80" aria-label="Flavour name">
       <input id="addWhere" placeholder="Where / when (optional)" maxlength="60" aria-label="Where or when">
       <button type="submit">Add</button>
     </form>
@@ -176,7 +189,7 @@ footer { font-size: 12.5px; color: var(--muted); display: grid; gap: 4px; }
 
   <footer>
     <span id="status">Saved in this browser</span>
-    <span>Availability varies by country and changes often. Limited-edition names sometimes differ between markets (for example Crimson Sour Cherry is sold as Dark Cherry in the UK).</span>
+    <span>Fanta has more than 90 flavours worldwide and availability changes often. Limited-edition names sometimes differ between markets (for example Crimson Sour Cherry is sold as Dark Cherry in the UK).</span>
   </footer>
 </div>
 
@@ -196,7 +209,7 @@ const FLAVOURS = [
   ["strawberry", "Strawberry", "core", "Worldwide", "", ""],
   ["lemon", "Lemon", "core", "Europe", "", ""],
   ["exotic", "Exotic", "core", "Europe", "", "Tropical fruit blend"],
-  ["fruit-twist", "Fruit Twist", "core", "UK", "", ""],
+  ["fruit-twist", "Fruit Twist", "core", "UK", "", "Orange, apple and passionfruit"],
   ["fruit-punch", "Fruit Punch", "core", "US", "", ""],
   ["berry", "Berry", "core", "US", "", ""],
   ["peach", "Peach", "core", "US", "", ""],
@@ -213,12 +226,26 @@ const FLAVOURS = [
   ["exotic-zero", "Exotic Zero", "zero", "Europe", "", ""],
   ["grape-zero", "Grape Zero Sugar", "zero", "US", "", ""],
   ["raspberry-zero", "Raspberry Zero", "zero", "UK", "", ""],
+  ["apple-zero", "Apple Zero", "zero", "UK", "", ""],
+  ["tutti-frutti-zero", "Tutti Frutti Zero", "zero", "UK", "", ""],
+  ["all-fruit-zero", "All Fruit Zero", "zero", "Hungary", "", ""],
 
+  ["banana", "Banana", "regional", "China · imports", "", ""],
+  ["banana-chocolate", "Banana Chocolate", "regional", "China · imports", "", "Tastes like a fizzy chocolate banana milkshake"],
   ["shokata", "Shokata (Elderflower & Lemon)", "regional", "Balkans · Eastern Europe", "", ""],
   ["strawberry-kiwi", "Strawberry & Kiwi", "regional", "Europe", "", ""],
-  ["cassis", "Cassis (Blackcurrant)", "regional", "Benelux", "", ""],
-  ["melon", "Melon", "regional", "Japan", "", "Japan rotates many seasonal Fantas"],
-  ["watermelon", "Watermelon", "regional", "Asia · Middle East", "", ""],
+  ["cassis", "Cassis (Blackcurrant)", "regional", "Benelux · Japan", "", ""],
+  ["melon", "Melon", "regional", "Japan", "", ""],
+  ["yuzu", "Yuzu", "regional", "Japan", "", ""],
+  ["honey-lemon", "Honey Lemon", "regional", "Japan", "", ""],
+  ["ultra-lemon", "Ultra Lemon", "regional", "Japan", "", ""],
+  ["shine-muscat", "Shine Muscat", "regional", "Japan", "", "White grape"],
+  ["golden-apple", "Golden Apple", "regional", "Japan", "", ""],
+  ["shikuwasa", "Okinawa Shikuwasa", "regional", "Japan (Okinawa)", "", "Okinawan citrus"],
+  ["watermelon", "Watermelon", "regional", "Japan · Asia · Middle East", "Summer", ""],
+  ["lychee", "Lychee", "regional", "Hong Kong · Asia", "", ""],
+  ["starfruit", "Starfruit", "regional", "Hong Kong", "", ""],
+  ["blueberry", "Blueberry", "regional", "Hong Kong · South Korea", "", ""],
   ["guarana", "Guaraná", "regional", "Brazil", "", ""],
 
   ["wtf-blue", "What The Fanta: Blue", "limited", "US · Canada · S. Africa", "2022", "Zero Sugar mystery flavour"],
@@ -236,9 +263,10 @@ const FLAVOURS = [
   ["haunted-2026", "Haunted Collection cans", "limited", "Various", "Halloween 2026", "Halloween packs of the regular flavours"],
 ];
 
-const CHECK_SVG = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const CHECK_SVG = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const KINDS = [["drunk", "Drunk"], ["collected", "Collected"]];
 const LS_KEY = "fanta-checklist-v1";
-let state = { checked: {}, custom: [] };
+let state = { drunk: {}, collected: {}, custom: [] };
 let filter = "all";
 let query = "";
 let docRef = null;
@@ -246,8 +274,11 @@ let docRef = null;
 try { const s = JSON.parse(localStorage.getItem(LS_KEY) || "null"); if (s) state = normalise(s); } catch (e) {}
 
 function normalise(s) {
+  const obj = (v) => (v && typeof v === "object" && !Array.isArray(v)) ? { ...v } : {};
   return {
-    checked: (s && typeof s.checked === "object" && s.checked) ? { ...s.checked } : {},
+    // v1 had a single "checked" map; treat those ticks as "drunk"
+    drunk: obj(s && (s.drunk || s.checked)),
+    collected: obj(s && s.collected),
     custom: Array.isArray(s && s.custom) ? s.custom.filter(c => c && typeof c.id === "string" && typeof c.name === "string").map(c => ({ id: c.id, name: c.name.slice(0, 80), where: String(c.where || "").slice(0, 60) })) : [],
   };
 }
@@ -263,7 +294,7 @@ function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.
 function renderChips() {
   const chips = document.getElementById("chips");
   chips.textContent = "";
-  const opts = [["all", "All"], ...SECTIONS.map(s => [s.id, s.title]), ["custom", "Added by me"], ["todo", "Still to find"]];
+  const opts = [["all", "All"], ...SECTIONS.map(s => [s.id, s.title]), ["custom", "Added by me"], ["not-drunk", "Not drunk yet"], ["not-collected", "Not collected yet"]];
   for (const [id, label] of opts) {
     const b = el("button", "chip", label);
     b.type = "button"; b.id = "chip-" + id;
@@ -273,58 +304,71 @@ function renderChips() {
   }
 }
 
+function renderTally(items) {
+  for (const [k] of KINDS) {
+    const n = items.filter(i => state[k][i.id]).length;
+    const c = document.getElementById("count-" + k);
+    c.textContent = String(n); c.appendChild(el("small", null, " / " + items.length));
+    const pct = items.length ? Math.round((n / items.length) * 100) : 0;
+    document.getElementById("pct-" + k).textContent = pct + "% of the list";
+    document.getElementById("liquid-" + k).style.height = pct + "%";
+  }
+}
+
 function render() {
   renderChips();
   const items = allItems();
-  const done = items.filter(i => state.checked[i.id]).length;
-  document.getElementById("count").innerHTML = "";
-  const c = document.getElementById("count");
-  c.append(String(done)); const sm = el("small", null, " / " + items.length); c.appendChild(sm);
-  document.getElementById("liquid").style.width = (items.length ? (done / items.length) * 100 : 0) + "%";
-
-  const bd = document.getElementById("breakdown"); bd.textContent = "";
-  for (const s of SECTIONS.concat(state.custom.length ? [{ id: "custom", title: "Added" }] : [])) {
-    const inSec = items.filter(i => i.sec === s.id);
-    const span = el("span"); const b = el("b", null, inSec.filter(i => state.checked[i.id]).length + "/" + inSec.length);
-    span.append(s.title.split(" ")[0] + " "); span.appendChild(b); bd.appendChild(span);
-  }
+  renderTally(items);
 
   const q = query.trim().toLowerCase();
   const host = document.getElementById("sections"); host.textContent = "";
   const secs = SECTIONS.concat([{ id: "custom", title: "Added by me", blurb: "Flavours you've added yourself." }]);
+  const todo = filter === "not-drunk" ? "drunk" : filter === "not-collected" ? "collected" : null;
   let shown = 0;
   for (const s of secs) {
-    if (filter !== "all" && filter !== "todo" && filter !== s.id) continue;
+    if (filter !== "all" && !todo && filter !== s.id) continue;
     let list = items.filter(i => i.sec === s.id);
-    if (filter === "todo") list = list.filter(i => !state.checked[i.id]);
+    if (todo) list = list.filter(i => !state[todo][i.id]);
     if (q) list = list.filter(i => [i.name, i.region, i.year, i.note].join(" ").toLowerCase().includes(q));
-    if (!list.length && (s.id === "custom" || q || filter === "todo")) continue;
+    if (!list.length && (s.id === "custom" || q || todo)) continue;
     shown += list.length;
     const sec = el("section");
-    const h = el("h2", null, s.title); h.appendChild(el("span", "n", list.filter(i => state.checked[i.id]).length + " of " + list.length)); sec.appendChild(h);
+    const h = el("h2", null, s.title);
+    h.appendChild(el("span", "n", list.filter(i => state.drunk[i.id]).length + " drunk · " + list.filter(i => state.collected[i.id]).length + " collected · " + list.length + " total"));
+    sec.appendChild(h);
     sec.appendChild(el("p", "blurb", s.blurb));
     const ul = el("ul", "list");
     for (const it of list) {
-      const li = el("li", "row"); const lab = el("label");
-      const cb = el("input"); cb.type = "checkbox"; cb.id = "f-" + it.id; cb.checked = !!state.checked[it.id];
-      cb.onchange = () => { if (cb.checked) state.checked[it.id] = true; else delete state.checked[it.id]; save(); render(); };
-      const box = el("span", "box"); box.innerHTML = CHECK_SVG;
-      const name = el("span", "name"); name.appendChild(el("span", "t", it.name));
-      if (it.note) name.appendChild(el("span", "note", it.note));
-      const meta = el("span", "meta");
+      const li = el("li", "row");
+      const info = el("div", "info");
+      info.appendChild(el("span", "name", it.name));
+      if (it.note) info.appendChild(el("span", "note", it.note));
+      const meta = el("div", "meta");
       if (it.year) meta.appendChild(el("span", "tag ltd", it.year));
       if (it.region) meta.appendChild(el("span", "tag" + (it.sec === "regional" ? " reg" : it.sec === "zero" ? " zero" : ""), it.region));
       if (it.custom) {
         const del = el("button", "del", "Remove"); del.type = "button";
-        del.onclick = (e) => { e.preventDefault(); state.custom = state.custom.filter(x => x.id !== it.id); delete state.checked[it.id]; save(); render(); };
+        del.onclick = () => { state.custom = state.custom.filter(x => x.id !== it.id); delete state.drunk[it.id]; delete state.collected[it.id]; save(); render(); };
         meta.appendChild(del);
       }
-      lab.append(cb, box, name, meta); li.appendChild(lab); ul.appendChild(li);
+      if (meta.childNodes.length) info.appendChild(meta);
+      const ticks = el("div", "ticks");
+      for (const [k, label] of KINDS) {
+        const b = el("button", "tick " + k); b.type = "button"; b.id = k + "-" + it.id;
+        const on = !!state[k][it.id];
+        b.setAttribute("aria-pressed", String(on));
+        b.setAttribute("aria-label", label + ": " + it.name);
+        const dot = el("span", "dot"); dot.innerHTML = CHECK_SVG;
+        b.append(dot, label);
+        b.onclick = () => { if (state[k][it.id]) delete state[k][it.id]; else state[k][it.id] = true; save(); render(); document.getElementById(k + "-" + it.id)?.focus(); };
+        ticks.appendChild(b);
+      }
+      li.append(info, ticks); ul.appendChild(li);
     }
     if (!list.length) ul.appendChild(el("li", "empty", "Nothing here yet."));
     sec.appendChild(ul); host.appendChild(sec);
   }
-  if (!shown && (q || filter === "todo")) host.appendChild(el("p", "empty", q ? "No flavours match “" + query.trim() + "”." : "You've found every flavour on the list. Add more below."));
+  if (!shown && (q || todo)) host.appendChild(el("p", "empty", q ? "No flavours match “" + query.trim() + "”." : "Every flavour on the list is ticked. Add more below."));
 }
 
 let saveTimer = null, writing = Promise.resolve();
@@ -363,10 +407,12 @@ render();
     let first = true;
     docRef.onSnapshot((snap) => {
       if (snap.exists) {
-        state = normalise(snap.data());
+        const raw = snap.data();
+        state = normalise(raw);
         try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {}
         render();
-      } else if (first && (Object.keys(state.checked).length || state.custom.length)) {
+        if (first && raw && raw.checked && !raw.drunk) save(); // migrate old single-tick saves
+      } else if (first && (Object.keys(state.drunk).length || Object.keys(state.collected).length || state.custom.length)) {
         save(); // carry over ticks made before signing in
       }
       first = false;
