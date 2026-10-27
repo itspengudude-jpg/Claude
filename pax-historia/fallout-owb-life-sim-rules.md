@@ -317,15 +317,43 @@ Increases with weapon lethality, weak armor, close range, surprise attacks, haza
 =====================================================================
 SECTION 6 — PERSISTENT NPCs
 =====================================================================
-- Any meaningfully relevant character introduced with a unique name becomes a persistent NPC.
-- Create each NPC as an unlanded polity using the character's full name.
-- All living family members of the Player must be created this way.
+6.1 CREATING NEW CHARACTER ENTITIES (mandatory)
+- EVERY new major character added to the story MUST be created as a new entity, in the SAME event where they first appear. Do not wait, do not skip it, and do not leave major characters as text only.
+- Each entity is an unlanded polity named with the character's full name.
+- A character counts as MAJOR if any of these are true:
+    • They have a unique name and speak to, help, hire, threaten, fight or trade with the Player.
+    • They are a family member, friend, love interest, rival, employer, mentor, companion or enemy of the Player.
+    • They lead or represent a faction, gang, settlement, caravan, business or military unit the Player deals with.
+    • They are likely to appear again, or the Player asks about them.
+- All living family members of the Player must be created as entities at the start of the game.
+- Never create duplicate entities for the same character. Check whether the character already exists first.
+- When a character dies or vanishes, say so in an event. Their entity then stops acting.
+
+6.2 HOW NPC ENTITIES BEHAVE
 - The Player can talk to NPCs through the Diplomatic Chats tab for conversations, negotiations, requests, favors, alliances, relationships and rivalries.
 - ALWAYS tell the Player when a new character has been added and can be spoken to in the Diplomatic Chats tab.
 - NPCs hold no land unless granted it through gameplay. They may belong to larger factions but act as individuals with their own goals.
 - NPCs remember past interactions and change over time based on the Player's actions and world events.
 - NPCs persist until they die or disappear through events.
-- Do not create NPCs for unnamed or trivial characters.
+- NPCs live their own lives when the Player is not around: they get jobs, move, marry, get hurt, join factions, betray people or die. When the Player meets them again, they have changed.
+- Do not create entities for unnamed or trivial characters such as a random guard or a passing trader the Player never speaks to.
+
+=====================================================================
+SECTION 6A — LIVING WORLD: THE WORLD NEVER WAITS
+=====================================================================
+- The world keeps moving at the same time as the Player. Every timeskip, the rest of the world must advance as well, not just the Player's area.
+- Every timeskip, alongside the Player's events, generate world progress:
+    • At least one event from the Player's own nation: politics, crime, economy, shortages, unrest, faction moves.
+    • At least one event from a neighboring region or faction.
+    • Major powers — NCR, Caesar's Legion, the Brotherhood chapters, the Enclave factions, the PLA — keep pursuing their goals through wars, expansion, diplomacy, scheming and internal power struggles.
+    • The Timeline in Section 13 keeps happening on schedule unless the Player's actions change it.
+- AI nations take their own actions every timeskip, decided by d100 rolls, without waiting for the Player.
+- Wars keep being fought, borders keep shifting, leaders rise and fall, and settlements are founded or wiped out whether or not the Player is involved.
+- Far-away events reach the Player realistically: through radio, caravans, rumors, refugees and newspapers. Distant news may arrive late, wrong or exaggerated.
+- World events must affect the Player's life where it makes sense: prices change, trade routes close, refugees arrive, conscription starts, raiders move in, new jobs open up.
+- Never freeze the world while the Player is busy. If the Player spends a month on a small personal task, a month of history still happens around them.
+
+=====================================================================
 
 =====================================================================
 SECTION 7 — COMBAT REPORTING
@@ -515,3 +543,5 @@ SECTION 14 — WRITING RULES
 - Every event that involves uncertainty must show its roll in the format from Section 1.7.
 - Every combat event must show a Casualties Count (Section 7).
 - Every injury must show an Injury Assessment (Section 5).
+- Every new major character must be created as an entity when they first appear (Section 6.1).
+- Every timeskip must include world progress outside the Player's area (Section 6A).
